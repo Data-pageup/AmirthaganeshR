@@ -162,11 +162,34 @@
 
         .visual-content {
             text-align: center;
+            width: 100%;
         }
 
-        .visual-icon {
+        .profile-image-container {
+            width: 250px;
+            height: 250px;
+            margin: 0 auto 2rem;
+            border-radius: 50%;
+            border: 5px solid var(--black);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-size: 6rem;
-            margin-bottom: 2rem;
+            color: var(--white);
         }
 
         .visual-stat {
@@ -273,41 +296,58 @@
         }
 
         .skill-category {
-            border: 1px solid var(--border);
-            padding: 2rem;
+            border: 2px solid var(--black);
+            padding: 2.5rem;
             background: var(--white);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 5px 5px 0px var(--black);
         }
 
         .skill-category-title {
-            font-size: 0.9rem;
+            font-size: 1rem;
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: var(--black);
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            color: var(--white);
+            background: var(--black);
+            padding: 0.8rem 1.2rem;
+            margin: -2.5rem -2.5rem 2rem -2.5rem;
+            position: relative;
         }
 
-        .skill-category-title::before {
-            content: '';
-            display: inline-block;
-            width: 8px;
-            height: 8px;
+        .skill-category:nth-child(1) .skill-category-title {
             background: var(--accent-red);
         }
 
-        .skill-item {
-            margin-bottom: 1rem;
-            font-size: 0.85rem;
-            color: var(--text);
+        .skill-category:nth-child(2) .skill-category-title {
+            background: var(--accent-blue);
         }
 
-        .skill-item::before {
-            content: '→ ';
-            color: var(--accent-blue);
-            font-weight: 800;
+        .skill-category:nth-child(3) .skill-category-title {
+            background: var(--black);
+        }
+
+        .skill-item {
+            margin-bottom: 1.2rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            padding: 0.6rem 1rem;
+            background: #F8F8F8;
+            border-left: 3px solid var(--accent-blue);
+            font-weight: 500;
+        }
+
+        .skill-category:nth-child(1) .skill-item {
+            border-left-color: var(--accent-red);
+        }
+
+        .skill-category:nth-child(3) .skill-item {
+            border-left-color: var(--black);
         }
 
         /* Projects Section */
@@ -590,7 +630,7 @@
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Work</a></li>
+            <li><a href="#projects">Projects</a></li>
             <li><a href="#timeline">Timeline</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
@@ -611,7 +651,12 @@
         </div>
         <div class="hero-visual">
             <div class="visual-content">
-                <div class="visual-icon">🧠</div>
+                <div class="profile-image-container">
+                    <!-- Replace 'YOUR_IMAGE_URL_HERE' with your actual image URL -->
+                    <!-- You can upload your image to GitHub and use that link, or use an image hosting service -->
+                    <img src="YOUR_IMAGE_URL_HERE" alt="Amirthaganesh R" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder" style="display: none;">AR</div>
+                </div>
                 <div class="visual-stat">5+</div>
                 <div class="visual-label">Published Projects</div>
             </div>
@@ -685,7 +730,7 @@
     <section class="projects" id="projects">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Work</h2>
+                <h2 class="section-title">Projects</h2>
                 <div class="section-line"></div>
             </div>
             <div class="projects-grid">
