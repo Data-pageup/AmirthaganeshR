@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirthaganesh R - Data Scientist Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --text: #1A1A1A;
+            --border: #E5E5E5;
+            --accent-red: #E63946;
+            --accent-blue: #1E90FF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--black);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6rem 3rem;
+            margin-top: 4rem;
+            gap: 6rem;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            color: var(--black);
+        }
+
+        .hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--text);
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .hero .tagline {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            color: var(--text);
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--black);
+            background: var(--black);
+            color: var(--white);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-outline {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Hero Visual */
+        .hero-visual {
+            flex: 1;
+            height: 550px;
+            background: linear-gradient(135deg, var(--white) 0%, #F8F8F8 100%);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .visual-content {
+            text-align: center;
+        }
+
+        .visual-icon {
+            font-size: 6rem;
+            margin-bottom: 2rem;
+        }
+
+        .visual-stat {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .visual-label {
+            font-size: 0.85rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -1px;
+            min-width: 300px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            border-left: 3px solid var(--black);
+            padding-left: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .skill-category {
+            border: 1px solid var(--border);
+            padding: 2rem;
+            background: var(--white);
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--black);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category-title::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-red);
+        }
+
+        .skill-item {
+            margin-bottom: 1rem;
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .skill-item::before {
+            content: '→ ';
+            color: var(--accent-blue);
+            font-weight: 800;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 2px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 8px 8px 0px var(--black);
+        }
+
+        .project-visual {
+            height: 200px;
+            background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--white);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .project-description {
+            font-size: 0.85rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            background: var(--black);
+            color: var(--white);
+            padding: 0.3rem 0.7rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--black);
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            color: var(--accent-red);
+            border-bottom-color: var(--accent-red);
+        }
+
+        /* Timeline Section */
+        .timeline {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-content {
+            max-width: 800px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 29px;
+            top: 60px;
+            width: 2px;
+            height: calc(100% - 60px);
+            background: var(--border);
+        }
+
+        .timeline-dot {
+            width: 12px;
+            height: 12px;
+            background: var(--black);
+            border-radius: 50%;
+            margin-top: 6px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            background: var(--accent-red);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            background: var(--accent-blue);
+        }
+
+        .timeline-text h3 {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 0.3rem;
+            letter-spacing: -0.5px;
+        }
+
+        .timeline-text p {
+            font-size: 0.85rem;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 3rem;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--white);
+            padding: 0.7rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 3rem;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-header {
+                flex-direction: column;
+            }
+
+            .section-line {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                padding: 2rem 1.5rem;
+                margin-top: 8rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AR</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#timeline">Timeline</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Amirthaganesh R</h1>
+            <p class="subtitle">Data Scientist & ML Engineer</p>
+            <p class="tagline">Building intelligent systems from GANs to predictive models.
+                Expertise in deep learning, computer vision, and production ML deployments.</p>
+            <div class="hero-buttons">
+                <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Work</button>
+                <button class="btn btn-outline" onclick="window.open('https://github.com/Data-pageup', '_blank')">GitHub</button>
+                <button class="btn btn-outline" onclick="window.open('https://linkedin.com/in/amirthaganeshramesh', '_blank')">LinkedIn</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-content">
+                <div class="visual-icon">🧠</div>
+                <div class="visual-stat">5+</div>
+                <div class="visual-label">Published Projects</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I'm a Data Science graduate student at VIT with a passion for building intelligent systems. From synthetic data generation with GANs to waste classification using computer vision, I transform complex problems into elegant ML solutions.</p>
+                    <p>My work spans deep learning, feature engineering, and deploying production-ready models. Currently published at IEEE CICN 2025 and building scalable AI systems with proven impact—from 88.8% accuracy in waste sorting to 78% reduction in data inconsistencies.</p>
+                </div>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <div class="stat-number">5+</div>
+                        <div class="stat-label">ML Projects Deployed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">8.43</div>
+                        <div class="stat-label">M.Sc CGPA (VIT)</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">IEEE</div>
+                        <div class="stat-label">Published Author</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <div class="skill-category-title">Languages</div>
+                    <div class="skill-item">Python (NumPy, Pandas, Scikit-learn)</div>
+                    <div class="skill-item">R (statsmodel, dplyr, tidyr)</div>
+                    <div class="skill-item">SQL</div>
+                    <div class="skill-item">MATLAB</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">ML & Deep Learning</div>
+                    <div class="skill-item">TensorFlow, Keras, PyTorch</div>
+                    <div class="skill-item">GANs, CNN, RNN, LSTM, GRU</div>
+                    <div class="skill-item">XGBoost, Random Forest, SVM</div>
+                    <div class="skill-item">PCA, t-SNE, K-Means</div>
+                </div>
+                <div class="skill-category">
+                    <div class="skill-category-title">Tools & Platforms</div>
+                    <div class="skill-item">Streamlit, Plotly, Tableau</div>
+                    <div class="skill-item">Docker, MLflow, Apache Spark</div>
+                    <div class="skill-item">GitHub, Jupyter</div>
+                    <div class="skill-item">Oracle Cloud (OCI Certified)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Work</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-visual">🤖</div>
+                    <div class="project-content">
+                        <div class="project-title">Hybrid GAN Data Synthesizer</div>
+                        <p class="project-description">Dual-engine synthetic tabular data generator using Gaussian Copula and CTGAN with automated preprocessing and comprehensive evaluation metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">GANs</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">♻️</div>
+                    <div class="project-content">
+                        <div class="project-title">EcoWaste AI</div>
+                        <p class="project-description">MobileNetV2 transfer learning for waste classification achieving 88.8% accuracy on 25K+ images with CO₂ savings prediction (R² = 0.96).</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">MobileNetV2</span>
+                            <span class="tech-badge">RandomForest</span>
+                            <span class="tech-badge">K-Means</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">💪</div>
+                    <div class="project-content">
+                        <div class="project-title">SmartFit AI</div>
+                        <p class="project-description">ML-powered fitness platform analyzing 20K+ records using PCA, K-Means clustering, and neural networks for personalized insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Neural Networks</span>
+                            <span class="tech-badge">K-Means</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">💧</div>
+                    <div class="project-content">
+                        <div class="project-title">RippleWorks</div>
+                        <p class="project-description">Water quality intelligence system with dual XGBoost models for WQI regression and classification deployed as interactive web app.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">KNN</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">📝</div>
+                    <div class="project-content">
+                        <div class="project-title">Sentiment Analysis RNN</div>
+                        <p class="project-description">Sequential neural networks (RNN, LSTM, GRU) for text classification with real-time prediction on news articles and reviews.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LSTM</span>
+                            <span class="tech-badge">GRU</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">Live Demo</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-visual">🔬</div>
+                    <div class="project-content">
+                        <div class="project-title">IEEE Research Publication</div>
+                        <p class="project-description">Dimensionality reduction for intrusion detection using crow search and grey wolf optimization. Published at CICN 2025, NIT Goa.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Optimization</span>
+                            <span class="tech-badge">Security</span>
+                            <span class="tech-badge">Research</span>
+                        </div>
+                        <a href="#" class="project-link">Read Paper</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Journey</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline-content">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-text">
+                        <h3>B.Sc Data Science & Analytics – Sharda University</h3>
+                        <p>Graduated with Honors, CGPA 7.85/10.0. Built strong foundation in statistical modeling, ML algorithms, and data analysis.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-text">
+                        <h3>Junior Data Analyst Intern – White Elephant</h3>
+                        <p>Analyzed 100K+ records achieving 85% data quality improvement. Applied t-SNE, PCA reducing feature space by 40% while maintaining 92% variance. Improved model accuracy by 12% through regularization.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-text">
+                        <h3>M.Sc Data Science – VIT, AP</h3>
+                        <p>Currently pursuing with CGPA 8.43/10.0. Specializing in deep learning, GANs, computer vision, and production ML systems.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-text">
+                        <h3>IEEE Publication & Oracle Certification</h3>
+                        <p>Published research at IEEE CICN 2025. Earned Oracle Cloud Infrastructure 2025 Certified Data Science Professional. Building scalable AI solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title" style="color: var(--white); margin-bottom: 1rem;">Let's Connect</h2>
+        <p class="contact-text">Open to collaborations, research opportunities, and innovative data science projects.</p>
+        <div class="contact-links">
+            <a href="mailto:amirthaganeshramesh@gmail.com" class="contact-link">Email</a>
+            <a href="https://github.com/Data-pageup" target="_blank" class="contact-link">GitHub</a>
+            <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="tel:+916374707500" class="contact-link">+91 6374707500</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Amirthaganesh R. Designed & built with passion.</p>
+    </footer>
+</body>
+</html>
