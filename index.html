@@ -6,7 +6,7 @@
     <title>Amirtha Ganesh R - Data Scientist Portfolio</title>
     <style>
         * {
-            margin: 0; 
+            margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
@@ -160,50 +160,81 @@
             overflow: hidden;
         }
 
-        .visual-content {
-            text-align: center;
+        .carousel-container {
             width: 100%;
-        }
-
-        .profile-image-container {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 2rem;
-            border-radius: 50%;
-            border: 5px solid var(--black);
-            overflow: hidden;
+            height: 100%;
             position: relative;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .profile-placeholder {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, var(--accent-red), var(--accent-blue));
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 6rem;
-            color: var(--white);
         }
 
-        .visual-stat {
-            font-size: 2.5rem;
+        .carousel-slide {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            animation: fadeIn 1s;
+        }
+
+        .carousel-slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .slide-icon {
+            font-size: 5rem;
+            margin-bottom: 2rem;
+        }
+
+        .carousel-slide h3 {
+            font-size: 1.8rem;
             font-weight: 800;
-            color: var(--accent-red);
-            margin-bottom: 0.5rem;
+            color: var(--black);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
         }
 
-        .visual-label {
-            font-size: 0.85rem;
+        .carousel-slide p {
+            font-size: 1rem;
             color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            line-height: 1.6;
+        }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--black);
+            transform: scale(1.2);
+        }
+
+        .dot:hover {
+            background: var(--accent-blue);
         }
 
         /* About Section */
@@ -650,18 +681,72 @@
             </div>
         </div>
         <div class="hero-visual">
-            <div class="visual-content">
-                <div class="profile-image-container">
-                    <!-- Replace 'YOUR_IMAGE_URL_HERE' with your actual image URL -->
-                    <!-- You can upload your image to GitHub and use that link, or use an image hosting service -->
-                    <img src="Amirtha Ganesh R.jpg" alt="Amirthaganesh R" class="profile-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                    <div class="profile-placeholder" style="display: none;">AR</div>
+            <div class="carousel-container">
+                <div class="carousel-slide active">
+                    <div class="slide-icon">🤖</div>
+                    <h3>Hybrid GAN Data Synthesizer</h3>
+                    <p>Built dual-engine synthetic data generator with CTGAN</p>
                 </div>
-                <div class="visual-stat">5+</div>
-                <div class="visual-label">Published Projects</div>
+                <div class="carousel-slide">
+                    <div class="slide-icon">♻️</div>
+                    <h3>EcoWaste AI</h3>
+                    <p>88.8% accuracy waste classification with MobileNetV2</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-icon">📄</div>
+                    <h3>IEEE Publication</h3>
+                    <p>Published at CICN 2025, NIT Goa</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-icon">🎓</div>
+                    <h3>Oracle Cloud Certified</h3>
+                    <p>OCI Data Science Professional 2025</p>
+                </div>
+                <div class="carousel-slide">
+                    <div class="slide-icon">💪</div>
+                    <h3>SmartFit AI Platform</h3>
+                    <p>ML fitness insights from 20K+ records</p>
+                </div>
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                    <span class="dot" onclick="currentSlide(4)"></span>
+                    <span class="dot" onclick="currentSlide(5)"></span>
+                </div>
             </div>
         </div>
     </section>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-slide");
+            let dots = document.getElementsByClassName("dot");
+            
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");
+            }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            
+            slides[slideIndex-1].classList.add("active");
+            dots[slideIndex-1].classList.add("active");
+            
+            setTimeout(showSlides, 4000); // Change slide every 4 seconds
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+    </script>
 
     <!-- About Section -->
     <section class="about" id="about">
@@ -869,7 +954,7 @@
         <h2 class="section-title" style="color: var(--white); margin-bottom: 1rem;">Let's Connect</h2>
         <p class="contact-text">Open to collaborations, research opportunities, and innovative data science projects.</p>
         <div class="contact-links">
-            <a href="mailto:amirthaganeshramesh@gmail.com" class="contact-link">Email</a>
+            <a href="/cdn-cgi/l/email-protection#83e2eeeaf1f7ebe2e4e2ede6f0ebf1e2eee6f0ebc3e4eee2eaefade0ecee" class="contact-link">Email</a>
             <a href="https://github.com/Data-pageup" target="_blank" class="contact-link">GitHub</a>
             <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="contact-link">LinkedIn</a>
             <a href="tel:+916374707500" class="contact-link">+91 6374707500</a>
@@ -878,7 +963,4 @@
 
     <!-- Footer -->
     <footer>
-        <p>© 2024 Amirthaganesh R. Designed & built with passion.</p>
-    </footer>
-</body>
-</html>
+        <p>© 2024 Amirthaganesh R. Designed & bu
