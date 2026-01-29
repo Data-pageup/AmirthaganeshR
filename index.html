@@ -149,30 +149,41 @@
 
         /* Hero Visual */
         .hero-visual {
-            flex: 1;
-            height: 550px;
-            background: linear-gradient(135deg, var(--white) 0%, #F8F8F8 100%);
-            border: 1px solid var(--border);
+            flex: 0.8;
+            height: 400px;
+            background: var(--white);
+            border: 3px solid var(--black);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             position: relative;
             overflow: hidden;
         }
 
+        .visual-header {
+            background: var(--black);
+            color: var(--white);
+            padding: 1rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 3px solid var(--black);
+        }
+
         .carousel-container {
             width: 100%;
-            height: 100%;
+            flex: 1;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, var(--white) 0%, #F8F8F8 100%);
         }
 
         .carousel-slide {
             display: none;
             text-align: center;
-            padding: 3rem;
+            padding: 2rem;
             animation: fadeIn 1s;
         }
 
@@ -192,36 +203,36 @@
         }
 
         .slide-icon {
-            font-size: 5rem;
-            margin-bottom: 2rem;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
         }
 
         .carousel-slide h3 {
-            font-size: 1.8rem;
+            font-size: 1.4rem;
             font-weight: 800;
             color: var(--black);
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
         }
 
         .carousel-slide p {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--text);
             line-height: 1.6;
         }
 
         .carousel-dots {
             position: absolute;
-            bottom: 2rem;
+            bottom: 1.5rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
-            gap: 0.8rem;
+            gap: 0.7rem;
         }
 
         .dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background: var(--border);
             cursor: pointer;
@@ -681,31 +692,32 @@
             </div>
         </div>
         <div class="hero-visual">
+            <div class="visual-header">💼 Recent Work & Current Projects</div>
             <div class="carousel-container">
                 <div class="carousel-slide active">
+                    <div class="slide-icon">📄</div>
+                    <h3>IEEE Publication (2025)</h3>
+                    <p>Recently published research at CICN 2025, NIT Goa on intrusion detection</p>
+                </div>
+                <div class="carousel-slide">
                     <div class="slide-icon">🤖</div>
-                    <h3>Hybrid GAN Data Synthesizer</h3>
-                    <p>Built dual-engine synthetic data generator with CTGAN</p>
+                    <h3>Hybrid GAN Synthesizer</h3>
+                    <p>Currently building dual-engine synthetic data generator with CTGAN</p>
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-icon">♻️</div>
-                    <h3>EcoWaste AI</h3>
-                    <p>88.8% accuracy waste classification with MobileNetV2</p>
-                </div>
-                <div class="carousel-slide">
-                    <div class="slide-icon">📄</div>
-                    <h3>IEEE Publication</h3>
-                    <p>Published at CICN 2025, NIT Goa</p>
+                    <h3>EcoWaste AI (Completed)</h3>
+                    <p>Achieved 88.8% accuracy in waste classification with MobileNetV2</p>
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-icon">🎓</div>
                     <h3>Oracle Cloud Certified</h3>
-                    <p>OCI Data Science Professional 2025</p>
+                    <p>Recently earned OCI Data Science Professional certification 2025</p>
                 </div>
                 <div class="carousel-slide">
                     <div class="slide-icon">💪</div>
                     <h3>SmartFit AI Platform</h3>
-                    <p>ML fitness insights from 20K+ records</p>
+                    <p>Deployed ML fitness platform analyzing 20K+ records</p>
                 </div>
                 <div class="carousel-dots">
                     <span class="dot active" onclick="currentSlide(1)"></span>
