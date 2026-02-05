@@ -327,6 +327,37 @@
             border-bottom: 1px solid var(--border);
         }
 
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .filter-btn.active {
+            background: var(--black);
+            color: var(--white);
+        }
+
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -337,6 +368,11 @@
             border: 2px solid var(--black);
             background: var(--white);
             transition: all 0.3s;
+            opacity: 1;
+        }
+
+        .project-card.hidden {
+            display: none;
         }
 
         .project-card:hover {
@@ -743,10 +779,6 @@
                 flex-direction: column;
             }
 
-            .section-line {
-                display: none;
-            }
-
             .achievements-carousel {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -924,8 +956,20 @@
                 <h2 class="section-title">Projects</h2>
                 <div class="section-line"></div>
             </div>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterProjects('all')">All</button>
+                <button class="filter-btn" onclick="filterProjects('deep-learning')">Deep Learning</button>
+                <button class="filter-btn" onclick="filterProjects('machine-learning')">Machine Learning</button>
+                <button class="filter-btn" onclick="filterProjects('computer-vision')">Computer Vision</button>
+                <button class="filter-btn" onclick="filterProjects('nlp')">NLP</button>
+                <button class="filter-btn" onclick="filterProjects('data-analysis')">Data Analysis</button>
+            </div>
+
             <div class="projects-grid">
-                <div class="project-card">
+                <!-- Project 1: GANs -->
+                <div class="project-card" data-category="deep-learning">
                     <div class="project-visual">🤖</div>
                     <div class="project-content">
                         <div class="project-title">Hybrid GAN Data Synthesizer</div>
@@ -939,7 +983,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 2: Computer Vision -->
+                <div class="project-card" data-category="computer-vision">
                     <div class="project-visual">♻️</div>
                     <div class="project-content">
                         <div class="project-title">EcoWaste AI</div>
@@ -953,7 +998,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 3: Machine Learning -->
+                <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">💪</div>
                     <div class="project-content">
                         <div class="project-title">SmartFit AI</div>
@@ -967,7 +1013,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 4: Data Analysis -->
+                <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">💧</div>
                     <div class="project-content">
                         <div class="project-title">RippleWorks</div>
@@ -981,7 +1028,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 5: NLP -->
+                <div class="project-card" data-category="nlp">
                     <div class="project-visual">📝</div>
                     <div class="project-content">
                         <div class="project-title">Sentiment Analysis RNN</div>
@@ -995,7 +1043,8 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <!-- Project 6: Machine Learning -->
+                <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">🔬</div>
                     <div class="project-content">
                         <div class="project-title">IEEE Research Publication</div>
@@ -1008,9 +1057,101 @@
                         <a href="#" class="project-link">Read Paper</a>
                     </div>
                 </div>
+
+                <!-- Project 7: Machine Learning -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-visual">🏥</div>
+                    <div class="project-content">
+                        <div class="project-title">MediPredict AI</div>
+                        <p class="project-description">Healthcare analytics system predicting disease onset using ensemble learning. Combines Random Forest, XGBoost for accurate predictions.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Random Forest</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Healthcare</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Deep Learning -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-visual">📈</div>
+                    <div class="project-content">
+                        <div class="project-title">Stock Price Forecaster</div>
+                        <p class="project-description">Advanced time series forecasting using LSTM networks. Incorporates technical indicators and sentiment analysis for predictions.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LSTM</span>
+                            <span class="tech-badge">Time Series</span>
+                            <span class="tech-badge">FinTech</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 9: Computer Vision -->
+                <div class="project-card" data-category="computer-vision">
+                    <div class="project-visual">🎭</div>
+                    <div class="project-content">
+                        <div class="project-title">FaceEmotion Detector</div>
+                        <p class="project-description">Real-time facial emotion recognition using CNN. Classifies seven emotions from live video streams with high accuracy and low latency.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">CNN</span>
+                            <span class="tech-badge">OpenCV</span>
+                            <span class="tech-badge">Real-time</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 10: Data Analysis -->
+                <div class="project-card" data-category="data-analysis">
+                    <div class="project-visual">🛒</div>
+                    <div class="project-content">
+                        <div class="project-title">Customer Churn Predictor</div>
+                        <p class="project-description">Business analytics solution predicting customer churn. Analyzes behavior patterns and engagement metrics for retention strategies.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Classification</span>
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">Business</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 11: NLP -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-visual">🗣️</div>
+                    <div class="project-content">
+                        <div class="project-title">Voice Command System</div>
+                        <p class="project-description">Speech recognition using deep learning for voice command interpretation. Processes audio signals with RNN architectures.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">RNN</span>
+                            <span class="tech-badge">Audio ML</span>
+                            <span class="tech-badge">MFCC</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project 12: Deep Learning -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-visual">🚗</div>
+                    <div class="project-content">
+                        <div class="project-title">Traffic Flow Optimizer</div>
+                        <p class="project-description">Smart traffic management using reinforcement learning. Optimizes flow and reduces congestion with dynamic signal timing.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">RL</span>
+                            <span class="tech-badge">Q-Learning</span>
+                            <span class="tech-badge">IoT</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup" class="project-link">View Project</a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Modals for Projects -->
 
     <!-- Achievements & Certifications Section -->
     <section class="achievements" id="achievements">
@@ -1255,4 +1396,37 @@
                 if (index === currentCertIndex) {
                     indicator.classList.add('active');
                 }
-            }
+            });
+        }
+
+        // Auto-slide every 6 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 6000);
+
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter projects
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
