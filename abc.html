@@ -1,0 +1,1968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirthaganesh R - Data Scientist Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --text: #1A1A1A;
+            --border: #E5E5E5;
+            --accent-red: #E63946;
+            --accent-blue: #1E90FF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--white);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            color: var(--black);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--black);
+        }
+
+        /* About Section */
+/* About Section */
+.about {
+    padding: 7rem 3rem 4rem 3rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--black);
+    letter-spacing: -2px;
+    margin-bottom: 0.5rem;
+}
+
+.profile-header .subtitle {
+    font-size: 1.3rem;
+    color: var(--text);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.5fr;
+    gap: 0rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 5rem;
+}
+
+.stat-item {
+    border-left: 3px solid var(--black);
+    padding-left: 1.5rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-image {
+    width: 100%;
+    border: 3px solid var(--black);
+    box-shadow: 10px 10px 0px var(--black);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.about-image:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--black);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-outline:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+        /* Skills Section */
+        .skills {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -1px;
+            min-width: 300px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            border: 2px solid var(--black);
+            padding: 1.5rem;
+            background: var(--white);
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-3px);
+            box-shadow: 4px 4px 0px var(--black);
+        }
+
+        .skill-category-title {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--white);
+            background: var(--black);
+            padding: 0.6rem 1rem;
+            margin: -1.5rem -1.5rem 1.2rem -1.5rem;
+            position: relative;
+        }
+
+        .skill-category:nth-child(1) .skill-category-title {
+            background: var(--accent-red);
+        }
+
+        .skill-category:nth-child(2) .skill-category-title {
+            background: var(--accent-blue);
+        }
+
+        .skill-category:nth-child(3) .skill-category-title {
+            background: #FF6B35;
+        }
+
+        .skill-category:nth-child(4) .skill-category-title {
+            background: #6A4C93;
+        }
+
+        .skill-category:nth-child(5) .skill-category-title {
+            background: #2A9D8F;
+        }
+
+        .skill-category:nth-child(6) .skill-category-title {
+            background: var(--black);
+        }
+
+        .skill-item {
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+            color: var(--text);
+            padding: 0.4rem 0.8rem;
+            background: #F8F8F8;
+            border-left: 3px solid var(--accent-blue);
+            font-weight: 500;
+            line-height: 1.4;
+        }
+
+        .skill-category:nth-child(1) .skill-item {
+            border-left-color: var(--accent-red);
+        }
+
+        .skill-category:nth-child(3) .skill-item {
+            border-left-color: #FF6B35;
+        }
+
+        .skill-category:nth-child(4) .skill-item {
+            border-left-color: #6A4C93;
+        }
+
+        .skill-category:nth-child(5) .skill-item {
+            border-left-color: #2A9D8F;
+        }
+
+        .skill-category:nth-child(6) .skill-item {
+            border-left-color: var(--black);
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .filter-btn.active {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .project-card {
+            border: 2px solid var(--black);
+            background: var(--white);
+            transition: all 0.3s;
+        }
+
+        .project-card.hidden {
+            display: none;
+        }
+
+        .project-card:hover {
+            transform: translate(-8px, -8px);
+            box-shadow: 8px 8px 0px var(--black);
+        }
+
+        .project-visual {
+            height: 200px;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover .project-visual img {
+            transform: scale(1.05);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .project-description {
+            font-size: 0.85rem;
+            color: var(--text);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-badge {
+            background: var(--black);
+            color: var(--white);
+            padding: 0.3rem 0.7rem;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .project-link {
+            display: inline-block;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--black);
+            transition: all 0.3s;
+            margin-right: 1rem;
+        }
+
+        .project-link:hover {
+            color: var(--accent-red);
+            border-bottom-color: var(--accent-red);
+        }
+
+        /* Achievements & Certifications Section */
+        .achievements {
+            padding: 6rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .achievements-carousel {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 450px;
+            position: relative;
+        }
+
+        .certificate-image-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .certificate-card {
+            display: none;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--border);
+            background: var(--white);
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .certificate-card.active {
+            display: block;
+        }
+
+        .certificate-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .certificate-info-container {
+            position: relative;
+            padding: 2rem;
+        }
+
+        .certificate-info {
+            display: none;
+            animation: slideInRight 0.6s ease-out;
+        }
+
+        .certificate-info.active {
+            display: block;
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .certificate-badge {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .certificate-title {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .certificate-issuer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .certificate-description {
+            font-size: 0.95rem;
+            color: var(--text);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .certificate-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .skill-tag {
+            background: #F8F8F8;
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+        }
+
+        .carousel-controls {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .carousel-nav {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .nav-btn {
+            width: 45px;
+            height: 45px;
+            border: 2px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: 700;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-btn:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 0.5rem;
+            margin-left: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .indicator.active {
+            background: var(--black);
+            width: 24px;
+            border-radius: 4px;
+        }
+
+        /* Timeline Section */
+        /* Timeline Section - Vertical Stacked Layout */
+.timeline {
+    padding: 6rem 3rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Left side vertical line */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--border);
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    padding-left: 3rem;
+}
+
+.timeline-box {
+    background: #F8F8F8;
+    border: 2px solid var(--black);
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s;
+}
+
+.timeline-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px var(--black);
+}
+
+/* Dot on the left line */
+.timeline-box::before {
+    content: '';
+    position: absolute;
+    left: -3.9rem;
+    top: 30px;
+    width: 15px;
+    height: 15px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--black);
+    z-index: 1;
+}
+
+/* Alternate colors for dots */
+.timeline-item:nth-child(odd) .timeline-box::before {
+    background: var(--accent-red);
+}
+
+.timeline-item:nth-child(even) .timeline-box::before {
+    background: var(--accent-blue);
+}
+
+.timeline-year {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.timeline-box h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+}
+
+.timeline-box p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 2rem;
+    }
+    
+    .timeline-box::before {
+        left: -2.9rem;
+    }
+}
+        /* Contact Section */
+        .contact {
+            padding: 6rem 3rem;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .contact-text {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-link {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border: 2px solid var(--white);
+            padding: 0.7rem 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .contact-link:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2rem 3rem;
+            background: var(--white);
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-list {
+                margin-left: 0;
+            }
+
+            .skills-content {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-header {
+                flex-direction: column;
+            }
+
+            .achievements-carousel {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .certificate-image-container {
+                order: 2;
+            }
+
+            .certificate-info-container {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .profile-header h1 {
+                font-size: 2rem;
+            }
+
+            .profile-header .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">AG R</div>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#timeline">Journey</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="profile-header">
+                <h1>Amirtha Ganesh R</h1>
+                <p class="subtitle">Data Scientist | Data Analyst | ML Engineer</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>I’m a final year M.Sc. Data Science student at VIT-AP with a strong passion for solving real-world problems through data. I hold a B.Sc. (Honors) in Data Science & Analytics from Sharda University, Delhi, and bring over five years of academic experience in data science, machine learning, deep learning, data analysis, and statistical modeling. I enjoy working hands on with data, transforming raw information into meaningful insights, and I’m comfortable owning the full ML lifecyclefrom analysis and feature engineering to model development and deployment</p>
+                    <p>My work focuses on the full analytics spectrum descriptive, diagnostic, predictive, and prescriptive along with post deployment model improvement, with an emphasis on accuracy, robustness, and real-world impact. I’ve optimized ML/DL models through continuous experimentation and evaluation, and I currently have a research paper in the publishing pipeline at IEEE CICN 2025. Curious by nature and driven by challenges, I’m always eager to build data-driven systems that make a measurable differe</p>
+                    
+                    <div class="action-buttons">
+                        <a href="#projects" class="btn">View Work</a>
+                        <a href="https://github.com/Data-pageup" target="_blank" class="btn btn-outline">GitHub</a>
+                        <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://drive.google.com/file/d/1GQLnb-cvMmN3IOkFZT1UxNZGU3XbMuht/view?usp=drive_link" target="_blank" class="btn btn-outline">Résumé</a>
+                    </div>
+                </div>
+                <div class="stats-list">
+                    <div class="stat-item">
+                        <div class="stat-number">5+ YEARS</div>
+                        <div class="stat-label">DATA SCIENCE EXPERIENCE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">MY CYCLE</div>
+                        <div class="stat-label">BUILD · DEPLOY · IMPROVE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">17+</div>
+                        <div class="stat-label">PRODUCTION READY MODELS</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">DATA PRACTITIONER</div>
+                        <div class="stat-label">DESCRIPTIVE → PRESCRIPTIVE</div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="my/AGR.jpg" alt="Amirthaganesh R - Data Scientist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Skills</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="skills-content">
+                <div class="skill-category">
+                    <div class="skill-category-title">Programming Languages</div>
+                    <div class="skill-item">Python (NumPy, Pandas, Scikit-learn)</div>
+                    <div class="skill-item">R (ggplot2, dplyr, tidyr)</div>
+                    <div class="skill-item">SQL (PostgreSQL, MySQL)</div>
+                    <div class="skill-item">MATLAB</div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Machine Learning</div>
+                    <div class="skill-item">Supervised (Linear/Logistic Regression, SVM)</div>
+                    <div class="skill-item">Ensemble (XGBoost, Random Forest, AdaBoost)</div>
+                    <div class="skill-item">Unsupervised (K-Means, DBSCAN, Hierarchical)</div>
+                    <div class="skill-item">Dimensionality Reduction (PCA, t-SNE, LDA)</div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Deep Learning</div>
+                    <div class="skill-item">Frameworks (TensorFlow, Keras, PyTorch)</div>
+                    <div class="skill-item">CNNs (ResNet, VGG, MobileNet)</div>
+                    <div class="skill-item">RNNs (LSTM, GRU, Bidirectional)</div>
+                    <div class="skill-item">GANs (DCGAN, CTGAN, Conditional GAN)</div>
+                    <div class="skill-item">Transfer Learning & Fine-tuning</div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Data Analysis & Visualization</div>
+                    <div class="skill-item">Data Wrangling (Pandas, NumPy)</div>
+                    <div class="skill-item">Statistical Analysis (Hypothesis Testing)</div>
+                    <div class="skill-item">Visualization (Matplotlib, Seaborn, Plotly)</div>
+                    <div class="skill-item">BI Tools (Tableau, Power BI)</div>
+                    <div class="skill-item">EDA & Feature Engineering</div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">MLOps & Deployment</div>
+                    <div class="skill-item">Model Deployment (Flask, Streamlit)</div>
+                    <div class="skill-item">Containerization (Docker)</div>
+                    <div class="skill-item">Version Control (Git, GitHub)</div>
+                    <div class="skill-item">Experiment Tracking (MLflow, Weights & Biases)</div>
+                    <div class="skill-item">Cloud Platforms (Oracle OCI, AWS)</div>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="skill-category-title">Specialized Skills</div>
+                    <div class="skill-item">NLP (Text Classification, Sentiment Analysis)</div>
+                    <div class="skill-item">Computer Vision (Object Detection, Classification)</div>
+                    <div class="skill-item">Time Series Analysis (ARIMA, Prophet)</div>
+                    <div class="skill-item">Big Data (Hadoop)</div>
+                    <div class="skill-item">Model Optimization & Hyperparameter Tuning</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Projects</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" onclick="filterProjects('all')">ALL</button>
+                <button class="filter-btn" onclick="filterProjects('deep-learning')">DEEP LEARNING</button>
+                <button class="filter-btn" onclick="filterProjects('machine-learning')">MACHINE LEARNING</button>
+                <button class="filter-btn" onclick="filterProjects('computer-vision')">COMPUTER VISION</button>
+                <button class="filter-btn" onclick="filterProjects('nlp')">NLP</button>
+                <button class="filter-btn" onclick="filterProjects('data-analysis')">DATA ANALYSIS</button>
+                <button class="filter-btn" onclick="filterProjects('time-series')">TIME SERIES</button>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Project 1: Hybrid GAN Data Synthesizer -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-visual">
+                        <img src="project_images/hybrid-GAN.jfif"" alt="Hybrid GAN Data Synthesizer">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Hybrid GAN Data Synthesizer</div>
+                        <p class="project-description">Dual-engine synthetic tabular data generator using Gaussian Copula and CTGAN with automated preprocessing and comprehensive evaluation metrics.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">GANs</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Python</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Hybrid_Generative_Adversarial_Neural_Network_and_Copula_DataSynthesizer" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 2: SmartFit AI -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-visual">
+                        <img src="project_images/smartfit.jfif" alt="SmartFit AI">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">SmartFit AI</div>
+                        <p class="project-description">ML-powered fitness platform analyzing 20K+ records using PCA, K-Means clustering, and neural networks for personalized insights.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Neural Networks</span>
+                            <span class="tech-badge">K-Means</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/SmartFit_AI" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://smartfit-ai.streamlit.app/" class="project-link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 3: RippleWorks -->
+                <div class="project-card" data-category="data-analysis">
+                    <div class="project-visual">
+                        <img src="project_images/Rippleworks.jfif" alt="RippleWorks">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">RippleWorks</div>
+                        <p class="project-description">Water quality intelligence system with dual XGBoost models for WQI regression and classification deployed as interactive web app.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">XGBoost</span>
+                            <span class="tech-badge">KNN</span>
+                            <span class="tech-badge">Streamlit</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/RippleWorks" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 4: Sequential Neural Networks Sentiment Analysis -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-visual">
+                        <img src="project_images/Sentiment Analysis RNN.jfif" alt="Sentiment Analysis RNN">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Sentiment Analysis RNN</div>
+                        <p class="project-description">Sequential neural networks (RNN, LSTM, GRU) for text classification with real-time prediction on news articles and reviews.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LSTM</span>
+                            <span class="tech-badge">GRU</span>
+                            <span class="tech-badge">NLP</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Sequential-Neural-Networks-for-Sentiment-Analysis-model-deploy" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://sequentialneuralnetworks-sentimentanalysis.streamlit.app/" class="project-link" target="_blank">Live Demo</a>
+                    </div>
+                </div>
+
+                <!-- Project 5: News Authenticity Detection -->
+                <div class="project-card" data-category="nlp">
+                    <div class="project-visual">
+                        <img src="project_images/News Authenticity Detection.jfif" alt="News Authenticity Detection">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">News Authenticity Detection</div>
+                        <p class="project-description">Classifies news articles as Fake or Real using TF-IDF features for classical models and LSTM embeddings for deep learning.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LSTM</span>
+                            <span class="tech-badge">TF-IDF</span>
+                            <span class="tech-badge">Classification</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/News-Authenticity-Detection" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 6: Drone Livestock Detection -->
+                <div class="project-card" data-category="computer-vision">
+                    <div class="project-visual">
+                        <img src="project_images/Drone Livestock Detection.png" alt="Drone Livestock Detection">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Drone Livestock Detection</div>
+                        <p class="project-description">YOLOv8-based livestock detection system for identifying and counting sheep in aerial imagery. mAP50: 0.782, Precision: 0.793.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">YOLOv8</span>
+                            <span class="tech-badge">Computer Vision</span>
+                            <span class="tech-badge">UAV</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/drone-livestock-detection" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 7: YOLOv8 Garbage Detection -->
+                <div class="project-card" data-category="computer-vision">
+                    <div class="project-visual">
+                        <img src="project_images/Garbage Detection.png" alt="YOLOv8 Garbage Detection">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">YOLOv8 Garbage Detection</div>
+                        <p class="project-description">Comparative study of YOLOv8 Nano at different resolutions (416×416 vs 608×608) for garbage detection. Analyzes speed-accuracy trade-offs.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">YOLOv8</span>
+                            <span class="tech-badge">Model Optimization</span>
+                            <span class="tech-badge">Research</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/YOLOv8_garbage_detection" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 8: Maharashtra QSR Site Selection -->
+                <div class="project-card" data-category="data-analysis">
+                    <div class="project-visual">
+                        <img src="project_images/QSR.png" alt="QSR Site Selection Analysis">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">QSR Site Selection Analysis</div>
+                        <p class="project-description">Data-driven approach to identifying optimal locations for Quick Service Restaurant expansion in Maharashtra using demographic and POI data.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Geospatial Analysis</span>
+                            <span class="tech-badge">Market Research</span>
+                            <span class="tech-badge">Pandas</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/maharashtra-qsr-site-selection" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 9: E-Commerce Market Viability -->
+                <div class="project-card" data-category="data-analysis">
+                    <div class="project-visual">
+                        <img src="project_images/E-Commerce Market Viability.jfif" alt="E-Commerce Market Viability">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">E-Commerce Market Viability</div>
+                        <p class="project-description">Framework to identify high-potential markets and operational risks in e-commerce expansion. Delivered in 4 hours using 9 interconnected datasets.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Business Analytics</span>
+                            <span class="tech-badge">Random Forest</span>
+                            <span class="tech-badge">Clustering</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/ecommerce-market-viability-analysis" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 10: Aircraft Engine Anomaly Detection -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-visual">
+                        <img src="project_images/Aircraft Engine Anomaly Detection.png" alt="Aircraft Engine Anomaly Detection">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Aircraft Engine Anomaly Detection</div>
+                        <p class="project-description">Identifying engines operating at abnormally high turbine gas temperatures using Isolation Forest and unsupervised machine learning.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Isolation Forest</span>
+                            <span class="tech-badge">Anomaly Detection</span>
+                            <span class="tech-badge">PCA</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/aircraft-engine-anomaly-detectionn" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 11: Energy Demand Forecasting -->
+                <div class="project-card" data-category="time-series">
+                    <div class="project-visual">
+                        <img src="project_images/Energy Demand Forecasting.jfif" alt="Energy Demand Forecasting">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Energy Demand Forecasting</div>
+                        <p class="project-description">Forecasting electrical load demand and solar power generation in Italy using ARIMA models for grid management and energy planning.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">ARIMA</span>
+                            <span class="tech-badge">Time Series</span>
+                            <span class="tech-badge">Energy Analytics</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Energy-demanding-forecasting-using-ARIMA" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 12: Student Performance Prediction -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-visual">
+                        <img src="project_images/student academic performance.jfif" alt="Student Performance Prediction">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Student Performance Prediction</div>
+                        <p class="project-description">Analyzing 80,000 student records with linear and non-linear models. R²: 0.8705, previous GPA correlation: 0.93.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Linear Regression</span>
+                            <span class="tech-badge">Random Forest</span>
+                            <span class="tech-badge">Education Analytics</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Score-Across-Linear-and-Non-Linear-Models" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://data-pageup.github.io/LR/" class="project-link" target="_blank">Docs</a>
+                    </div>
+                </div>
+
+                <!-- Project 13: Handwritten Digit Recognition -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-visual">
+                        <img src="project_images/Handwritten digit recognition.png" alt="Handwritten Digit Recognition">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Handwritten Digit Recognition</div>
+                        <p class="project-description">Deep learning project classifying handwritten digits (0–9) from 28×28 grayscale images. Validation Accuracy: ~97%.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Neural Networks</span>
+                            <span class="tech-badge">Image Classification</span>
+                            <span class="tech-badge">MNIST</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Digit-Recognition-using-ANN" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 14: Deep Learning Experiments -->
+                <div class="project-card" data-category="deep-learning">
+                    <div class="project-visual">
+                        <img src="project_images/Deep Learning Experiments.png" alt="Deep Learning Experiments">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Deep Learning Experiments</div>
+                        <p class="project-description">Collection of DL experiments: LSTM text classification, MLP regression, RNN sentiment analysis, CNN image classification on CIFAR-10.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">LSTM</span>
+                            <span class="tech-badge">CNN</span>
+                            <span class="tech-badge">RNN</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Deep-Learning-Experiments" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 15: Financial Time-Series Forecasting -->
+                <div class="project-card" data-category="time-series">
+                    <div class="project-visual">
+                        <img src="project_images/TESLA Daily Return Prediction.png" alt="TESLA Daily Return Prediction">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">TESLA Daily Return Prediction</div>
+                        <p class="project-description">Full-stack financial forecasting pipeline with 116 engineered features. Linear Regression outperforms XGBoost/LightGBM in out-of-sample accuracy.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Time Series</span>
+                            <span class="tech-badge">FinTech</span>
+                            <span class="tech-badge">Feature Engineering</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Financial-Time-Series-Forecasting" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+
+                <!-- Project 16: Diabetes Readmission Prediction -->
+                <div class="project-card" data-category="machine-learning">
+                    <div class="project-visual">
+                        <img src="project_images/Diabetes Readmission Prediction.jfif" alt="Diabetes Readmission Prediction">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Diabetes Readmission Prediction</div>
+                        <p class="project-description">Predicting hospital readmission using ensemble learning on 101,766 patient records. Gradient Boosting achieves 69.82% accuracy.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Gradient Boosting</span>
+                            <span class="tech-badge">Healthcare</span>
+                            <span class="tech-badge">Classification</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Diabetic-Readmission" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://diabetes-readmission.streamlit.app/" class="project-link" target="_blank">Dashboard</a>
+                    </div>
+                </div>
+
+                <!-- Project 17: Trader Behavior vs Market Sentiment -->
+                <div class="project-card" data-category="data-analysis">
+                    <div class="project-visual">
+                        <img src="project_images/Trader Behavior vs Market Sentiment.jpg" alt="Trader Behavior vs Market Sentiment">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">Trader Behavior vs Market Sentiment</div>
+                        <p class="project-description">Analyzing relationship between trader profitability and Bitcoin Fear & Greed Index using 211K+ trades. Fear periods yield 2.5× higher PnL.</p>
+                        <div class="project-tech">
+                            <span class="tech-badge">Statistical Analysis</span>
+                            <span class="tech-badge">Trading Analytics</span>
+                            <span class="tech-badge">Behavioral Finance</span>
+                        </div>
+                        <a href="https://github.com/Data-pageup/Trader-Behavior-vs-Market-Sentiment" class="project-link" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements & Certifications Section -->
+    <section class="achievements" id="achievements">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Achievements & Certifications</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="achievements-carousel">
+                <!-- Certificate Images -->
+                <div class="certificate-image-container">
+                    <!-- Certificate 0: IEEE Publication -->
+                    <div class="certificate-card active" data-cert="0">
+                        <img src="certificate/IEEE-certificate.png" alt="IEEE CICN 2025 Publication Certificate">
+                    </div>
+                    <!-- Certificate 1: Oracle Cloud Data Science -->
+                    <div class="certificate-card" data-cert="1">
+                        <img src="certificate/Oracle Cloud-Data Science.png" alt="Oracle Cloud Data Science Professional">
+                    </div>
+                    <!-- Certificate 2: Kaggle Geospatial Analysis -->
+                    <div class="certificate-card" data-cert="2">
+                        <img src="certificate/Kaggle Geospatial Analysis.png" alt="Kaggle Geospatial Analysis">
+                    </div>
+                    <!-- Certificate 3: British Airways Data Science Simulation -->
+                    <div class="certificate-card" data-cert="3">
+                        <img src="certificate/British Airways-Data Science job simulation.png" alt="British Airways Data Science Job Simulation">
+                    </div>
+                    <!-- Certificate 4: Databricks SQL and Power BI -->
+                    <div class="certificate-card" data-cert="4">
+                        <img src="certificate/Databricks in sql and power bi.png" alt="Databricks SQL and Power BI">
+                    </div>
+                    <!-- Certificate 5: Deloitte Data Analytics Simulation -->
+                    <div class="certificate-card" data-cert="5">
+                        <img src="certificate/Deloitte- Data Analytics job simulation.png" alt="Deloitte Data Analytics Job Simulation">
+                    </div>
+                    <!-- Certificate 6: HP Life Data Science & Analytics -->
+                    <div class="certificate-card" data-cert="6">
+                        <img src="certificate/Hp-life- Data Science&Analytics.png" alt="HP Life Data Science & Analytics">
+                    </div>
+                    <!-- Certificate 7: HP Life Effective Presentation -->
+                    <div class="certificate-card" data-cert="7">
+                        <img src="certificate/Hp -life-Effective Presentation.png" alt="HP Life Effective Presentations">
+                    </div>
+                    <!-- Certificate 8: HP Life Presenting Data -->
+                    <div class="certificate-card" data-cert="8">
+                        <img src="certificate/HP-life -Presenting Data.png" alt="HP Life Presenting Data">
+                    </div>
+                    <!-- Certificate 9: University of Washington Machine Learning -->
+                    <div class="certificate-card" data-cert="9">
+                        <img src="certificate/University OF washiton-Machine Learning Foundations.png" alt="University of Washington Machine Learning Foundations">
+                    </div>
+                    <!-- Certificate 10: Business Analytics with Excel -->
+                    <div class="certificate-card" data-cert="10">
+                        <img src="certificate/Business analytics with Excel.png" alt="Business Analytics with Excel">
+                    </div>
+                    <!-- Certificate 11: Sharda University Hackathon -->
+                    <div class="certificate-card" data-cert="11">
+                        <img src="certificate/ShardaUniversity_hackathon.png" alt="Sharda University Hackathon Certificate">
+                    </div>
+                </div>
+
+                <!-- Certificate Information -->
+                <div class="certificate-info-container">
+                    <!-- Cert 0: IEEE Publication -->
+                    <div class="certificate-info active" data-cert="0">
+                        <span class="certificate-badge">Research Publication</span>
+                        <h3 class="certificate-title">IEEE CICN 2025 Conference Publication</h3>
+                        <p class="certificate-issuer">17th IEEE International Conference | NIT Goa | December 2025</p>
+                        <p class="certificate-description">
+                            Published research paper on "Dimensionality Reduction For Intrusion Detection Using Crow Search Optimization And Grey Wolf Optimization" at the prestigious IEEE International Conference on Computational Intelligence and Communication Networks (CICN-2025) held at NIT Goa, India. The research demonstrates advanced optimization techniques for enhancing cybersecurity through intelligent feature selection.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Research Publication</span>
+                            <span class="skill-tag">Optimization Algorithms</span>
+                            <span class="skill-tag">Intrusion Detection</span>
+                            <span class="skill-tag">Dimensionality Reduction</span>
+                            <span class="skill-tag">Cybersecurity</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator active" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 1: Oracle Cloud -->
+                    <div class="certificate-info" data-cert="1">
+                        <span class="certificate-badge">Cloud Certification</span>
+                        <h3 class="certificate-title">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
+                        <p class="certificate-issuer">Oracle | 2025</p>
+                        <p class="certificate-description">
+                            Demonstrated expertise in designing, building, and managing data science solutions on Oracle Cloud Infrastructure. Mastered OCI Data Science service, machine learning workflows, and cloud-based model deployment strategies.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">OCI</span>
+                            <span class="skill-tag">Cloud ML</span>
+                            <span class="skill-tag">Model Deployment</span>
+                            <span class="skill-tag">MLOps</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator active" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 2: Kaggle Geospatial -->
+                    <div class="certificate-info" data-cert="2">
+                        <span class="certificate-badge">Data Science Platform</span>
+                        <h3 class="certificate-title">Kaggle Geospatial Analysis</h3>
+                        <p class="certificate-issuer">Kaggle | 2024</p>
+                        <p class="certificate-description">
+                            Completed Kaggle's geospatial analysis course, mastering techniques for working with location data, spatial analysis, and geographic visualizations. Applied skills in real-world datasets using Python geospatial libraries.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Geospatial Analysis</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Data Visualization</span>
+                            <span class="skill-tag">GIS</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator active" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 3: British Airways -->
+                    <div class="certificate-info" data-cert="3">
+                        <span class="certificate-badge">Industry Simulation</span>
+                        <h3 class="certificate-title">British Airways Data Science Job Simulation</h3>
+                        <p class="certificate-issuer">Forage - British Airways | 2024</p>
+                        <p class="certificate-description">
+                            Completed a comprehensive data science job simulation for British Airways, involving customer review analysis, predictive modeling for customer bookings, and presenting data-driven insights to stakeholders.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Web Scraping</span>
+                            <span class="skill-tag">Sentiment Analysis</span>
+                            <span class="skill-tag">Predictive Modeling</span>
+                            <span class="skill-tag">Business Analytics</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator active" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 4: Databricks -->
+                    <div class="certificate-info" data-cert="4">
+                        <span class="certificate-badge">Technical Training</span>
+                        <h3 class="certificate-title">Get Started with SQL Analytics and BI on Databricks</h3>
+                        <p class="certificate-issuer">Databricks & Simplilearn | 2024</p>
+                        <p class="certificate-description">
+                            Mastered SQL analytics and business intelligence on the Databricks platform. Learned to build dashboards, perform complex queries, and create data visualizations for business insights using collaborative workspace.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Databricks</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">Business Intelligence</span>
+                            <span class="skill-tag">Data Visualization</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator active" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 5: Deloitte -->
+                    <div class="certificate-info" data-cert="5">
+                        <span class="certificate-badge">Industry Simulation</span>
+                        <h3 class="certificate-title">Deloitte Data Analytics Job Simulation</h3>
+                        <p class="certificate-issuer">Forage - Deloitte | 2024</p>
+                        <p class="certificate-description">
+                            Participated in Deloitte's data analytics virtual experience program, working on real-world business scenarios involving data analysis, dashboard creation, and strategic recommendations for clients.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Business Analytics</span>
+                            <span class="skill-tag">Dashboard Design</span>
+                            <span class="skill-tag">Data Storytelling</span>
+                            <span class="skill-tag">Consulting</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator active" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 6: HP Life Data Science -->
+                    <div class="certificate-info" data-cert="6">
+                        <span class="certificate-badge">Professional Development</span>
+                        <h3 class="certificate-title">HP Life: Data Science & Analytics</h3>
+                        <p class="certificate-issuer">HP Foundation | 2024</p>
+                        <p class="certificate-description">
+                            Successfully completed HP Life's comprehensive online course covering fundamentals of data science and analytics. Gained practical skills in analyzing data, identifying trends, and making data-driven decisions.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Data Science Fundamentals</span>
+                            <span class="skill-tag">Analytics</span>
+                            <span class="skill-tag">Data-Driven Decisions</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator active" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 7: HP Life Effective Presentations -->
+                    <div class="certificate-info" data-cert="7">
+                        <span class="certificate-badge">Communication Skills</span>
+                        <h3 class="certificate-title">HP Life: Effective Presentations</h3>
+                        <p class="certificate-issuer">HP Foundation | 2024</p>
+                        <p class="certificate-description">
+                            Completed course focused on creating and delivering impactful presentations. Developed skills in storytelling, visual design, audience engagement, and presenting technical information effectively.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Presentation Design</span>
+                            <span class="skill-tag">Public Speaking</span>
+                            <span class="skill-tag">Visual Communication</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator active" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 8: HP Life Presenting Data -->
+                    <div class="certificate-info" data-cert="8">
+                        <span class="certificate-badge">Data Communication</span>
+                        <h3 class="certificate-title">HP Life: Presenting Data</h3>
+                        <p class="certificate-issuer">HP Foundation | 2024</p>
+                        <p class="certificate-description">
+                            Mastered techniques for presenting data insights effectively to diverse audiences. Learned to create compelling data visualizations, communicate complex findings simply, and drive action through data storytelling.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Data Storytelling</span>
+                            <span class="skill-tag">Visualization</span>
+                            <span class="skill-tag">Communication</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator active" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 9: University of Washington ML -->
+                    <div class="certificate-info" data-cert="9">
+                        <span class="certificate-badge">Academic Course</span>
+                        <h3 class="certificate-title">Machine Learning Foundations</h3>
+                        <p class="certificate-issuer">University of Washington | 2024</p>
+                        <p class="certificate-description">
+                            Completed foundational machine learning course from University of Washington covering supervised learning, regression, classification, and case studies with real-world applications.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">Regression</span>
+                            <span class="skill-tag">Classification</span>
+                            <span class="skill-tag">Python</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator active" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 10: Business Analytics Excel -->
+                    <div class="certificate-info" data-cert="10">
+                        <span class="certificate-badge">Business Analytics</span>
+                        <h3 class="certificate-title">Business Analytics with Excel</h3>
+                        <p class="certificate-issuer">Microsoft & Simplilearn | 2024</p>
+                        <p class="certificate-description">
+                            Mastered business analytics using Microsoft Excel, including advanced functions, pivot tables, data analysis tools, and creating interactive dashboards for business intelligence.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Excel</span>
+                            <span class="skill-tag">Business Analytics</span>
+                            <span class="skill-tag">Data Analysis</span>
+                            <span class="skill-tag">Dashboards</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator active" onclick="goToSlide(10)"></span>
+                                <span class="indicator" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cert 11: Sharda University Hackathon -->
+                    <div class="certificate-info" data-cert="11">
+                        <span class="certificate-badge">Competition</span>
+                        <h3 class="certificate-title">Sharda University Hackathon</h3>
+                        <p class="certificate-issuer">Sharda University | 2024</p>
+                        <p class="certificate-description">
+                            Certificate of participation in the Sharda iNCODE-3.0 + TELSTRA hackathon competition. Demonstrated problem-solving skills and collaborative teamwork in developing innovative data-driven solutions under time constraints.
+                        </p>
+                        <div class="certificate-skills">
+                            <span class="skill-tag">Hackathon</span>
+                            <span class="skill-tag">Problem Solving</span>
+                            <span class="skill-tag">Team Collaboration</span>
+                            <span class="skill-tag">Rapid Prototyping</span>
+                        </div>
+                        <div class="carousel-controls">
+                            <div class="carousel-nav">
+                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                            </div>
+                            <div class="carousel-indicators">
+                                <span class="indicator" onclick="goToSlide(0)"></span>
+                                <span class="indicator" onclick="goToSlide(1)"></span>
+                                <span class="indicator" onclick="goToSlide(2)"></span>
+                                <span class="indicator" onclick="goToSlide(3)"></span>
+                                <span class="indicator" onclick="goToSlide(4)"></span>
+                                <span class="indicator" onclick="goToSlide(5)"></span>
+                                <span class="indicator" onclick="goToSlide(6)"></span>
+                                <span class="indicator" onclick="goToSlide(7)"></span>
+                                <span class="indicator" onclick="goToSlide(8)"></span>
+                                <span class="indicator" onclick="goToSlide(9)"></span>
+                                <span class="indicator" onclick="goToSlide(10)"></span>
+                                <span class="indicator active" onclick="goToSlide(11)"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section (Journey) -->
+<section class="timeline" id="timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Journey</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="timeline-content">
+                <!-- Item 1: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2020-2023</div>
+                        <h3>B.Sc Data Science & Analytics – Sharda University, Delhi</h3>
+                        <p>Graduated with Honors, building a strong foundation in statistical modeling, ML algorithms, and data analysis. Participated in 3 hackathon-based competitions, gaining hands-on experience in rapid prototyping and team collaboration. Founded a startup venture exploring data-driven solutions, which provided invaluable entrepreneurial insights into product development and business analytics.</p>
+                    </div>
+                </div>
+
+                <!-- Item 2: Right Side -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-box">
+                        <div class="timeline-year">June 2022 - Aug 2022</div>
+                        <h3>Data Analyst Intern – White Elephant</h3>
+                        <p>Analyzed 100K+ records achieving 85% data quality improvement through comprehensive data cleaning and validation pipelines. Applied dimensionality reduction techniques including t-SNE and PCA, reducing feature space by 40% while maintaining 92% variance. Improved model accuracy by 12% through advanced regularization techniques and feature engineering.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">June 2024 - Aug 2024</div>
+                        <h3>Data Science Intern – MBA Bazaar</h3>
+                        <p>Analyzed mock test, MCQ, and quiz data for CAT/XAT/GMAT prep platforms to identify topic-wise accuracy, time spent per question, and performance drop-offs. Built student performance tracking logic to classify users into beginner/intermediate/exam-ready segments. Cleaned and structured raw learner data including attempts, scores, retries, and engagement metrics using Python (Pandas, NumPy). Created predictive models to estimate exam readiness based on mock scores and practice consistency. Designed dashboards using Excel, Power BI, and Google Data Studio for mentors to monitor batch-wise progress. Conducted analysis on content effectiveness across case studies, workshops, and live sessions to identify learning interventions that improved scores. Supported the product team with data-backed insights for optimizing learning paths and mock test difficulty calibration.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Right Side -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2024-2026</div>
+                        <h3>M.Sc Data Science – VIT, AP</h3>
+                        <p>Currently pursuing with CGPA 8.43/10.0, specializing in statistical modeling, deep learning, machine learning, computer vision, and production ML systems. Serving as co-leader of the Data Science Club, fostering collaborative learning and organizing technical workshops. Completed multiple academic projects under different mentors, focusing on machine learning and deep learning architectures including CNNs for image classification and computer vision tasks. Developed BrainWeave, an information retrieval system that converts PDF and Word documents into visually structured mindmaps to enhance comprehension and learning efficiency. Working extensively with convolutional neural networks for various computer vision applications.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2025</div>
+                        <h3>IEEE Publication & Oracle Certification</h3>
+                        <p>Published research paper "Dimensionality Reduction for Intrusion Detection Using Crow Search Optimization and Grey Wolf Optimization" at the 2025 IEEE 17th International Conference on Computational Intelligence and Communication Networks (CICN) held at National Institute of Technology, Goa. Currently in the publishing pipeline. Earned Oracle Cloud Infrastructure 2025 Certified Data Science Professional certification, demonstrating expertise in cloud-based ML deployment and scalable AI solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title" style="color: var(--white); margin-bottom: 1rem;">Let's Connect</h2>
+        <p class="contact-text">Open to collaborations, research opportunities, internships, and full-time roles in data science.</p>
+        <div class="contact-links">
+            <a href="mailto:amirthaganeshofficial@gmail.com" class="contact-link">Email</a>
+            <a href="https://github.com/Data-pageup" target="_blank" class="contact-link">GitHub</a>
+            <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="tel:+916374707500" class="contact-link">+91 6374707500</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Amirthaganesh R. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentCertIndex = 0;
+        const totalCerts = 12;
+
+        function changeSlide(direction) {
+            currentCertIndex += direction;
+            
+            if (currentCertIndex < 0) currentCertIndex = totalCerts - 1;
+            if (currentCertIndex >= totalCerts) currentCertIndex = 0;
+            
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentCertIndex = index;
+            updateCarousel();
+        }
+
+        function updateCarousel() {
+            // Update certificate cards
+            const cards = document.querySelectorAll('.certificate-card');
+            cards.forEach((card, index) => {
+                card.classList.remove('active');
+                if (index === currentCertIndex) {
+                    card.classList.add('active');
+                }
+            });
+
+            // Update certificate info
+            const infos = document.querySelectorAll('.certificate-info');
+            infos.forEach((info, index) => {
+                info.classList.remove('active');
+                if (index === currentCertIndex) {
+                    info.classList.add('active');
+                }
+            });
+
+            // Update indicators
+            const indicators = document.querySelectorAll('.indicator');
+            indicators.forEach((indicator, index) => {
+                indicator.classList.remove('active');
+                if (index === currentCertIndex) {
+                    indicator.classList.add('active');
+                }
+            });
+        }
+
+        // Auto-slide every 6 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 6000);
+
+        // Project Filtering
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter projects
+            cards.forEach(card => {
+                if (category === 'all') {
+                    card.classList.remove('hidden');
+                } else {
+                    if (card.getAttribute('data-category') === category) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                }
+            });
+        }
+    </script>
+
+
+ 
+</body>
+</html>
