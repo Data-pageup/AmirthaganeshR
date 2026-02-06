@@ -3,101 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amirtha Ganesh R - Data Scientist Portfolio</title>
+    <title>Amirthaganesh R - Data Scientist Portfolio</title>
     <style>
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.8;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --white: #FFFFFF;
+            --black: #000000;
+            --text: #1A1A1A;
+            --border: #E5E5E5;
+            --accent-red: #E63946;
+            --accent-blue: #1E90FF;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--white);
             color: var(--text);
+            line-height: 1.6;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
-        }
-
-        .stats-list {
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-left: 5rem;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .stat-item {
-            border-left: 3px solid var(--black);
-            padding-left: 1.5rem;
-        }
-
-        .stat-number {
-            font-size: 1.8rem;
+        nav .logo {
+            font-size: 1.2rem;
             font-weight: 800;
-            color: var(--accent-blue);
-            line-height: 1;
-            margin-bottom: 0.3rem;
+            letter-spacing: -2px;
+            color: var(--black);
         }
 
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .about-image {
-            width: 100%;
-            border: 3px solid var(--black);
-            box-shadow: 10px 10px 0px var(--black);
-            transition: all 0.3s;
-            overflow: hidden;
-        }
-
-        .about-image:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 15px 15px 0px var(--black);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .action-buttons {
+        nav ul {
             display: flex;
-            gap: 1rem;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            margin-top: 2rem;
+            list-style: none;
+            gap: 2.5rem;
         }
 
-        .btn {
-            padding: 0.8rem 2rem;
-            border: 2px solid var(--black);
-            background: var(--black);
-            color: var(--white);
-            cursor: pointer;
-            font-size: 0.8rem;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            transition: all 0.3s;
-            text-transform: uppercase;
+        nav a {
+            color: var(--text);
             text-decoration: none;
-            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+            text-transform: uppercase;
         }
 
-        .btn:hover {
-            background: var(--white);
+        nav a:hover {
             color: var(--black);
         }
 
-        .btn-outline {
-            background: var(--white);
-            color: var(--black);
-        }
+        /* About Section */
+/* About Section */
+.about {
+    padding: 7rem 3rem 4rem 3rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
 
-        .btn-outline:hover {
-            background: var(--black);
-            color: var(--white);
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.profile-header {
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--black);
+    letter-spacing: -2px;
+    margin-bottom: 0.5rem;
+}
+
+.profile-header .subtitle {
+    font-size: 1.3rem;
+    color: var(--text);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr 0.5fr;
+    gap: 0rem;
+    align-items: start;
+    margin-bottom: 3rem;
+}
+
+.about-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    text-align: left;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+}
+
+.stats-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 5rem;
+}
+
+.stat-item {
+    border-left: 3px solid var(--black);
+    padding-left: 1.5rem;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: var(--text);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-image {
+    width: 100%;
+    border: 3px solid var(--black);
+    box-shadow: 10px 10px 0px var(--black);
+    transition: all 0.3s;
+    overflow: hidden;
+}
+
+.about-image:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 15px 15px 0px var(--black);
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 0.8rem 2rem;
+    border: 2px solid var(--black);
+    background: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-outline {
+    background: var(--white);
+    color: var(--black);
+}
+
+.btn-outline:hover {
+    background: var(--black);
+    color: var(--white);
+}
 
         /* Skills Section */
         .skills {
@@ -113,6 +222,25 @@
             margin-bottom: 3rem;
         }
 
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -1px;
+            min-width: 300px;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .skills-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
         .skill-category {
             border: 2px solid var(--black);
@@ -519,66 +647,113 @@
         }
 
         /* Timeline Section */
-        .timeline {
-            padding: 6rem 3rem;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
+        /* Timeline Section - Vertical Stacked Layout */
+.timeline {
+    padding: 6rem 3rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
 
-        .timeline-content {
-            max-width: 800px;
-        }
+.timeline-content {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
 
-        .timeline-item {
-            display: grid;
-            grid-template-columns: 60px 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-            position: relative;
-        }
+/* Left side vertical line */
+.timeline-content::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--border);
+}
 
-        .timeline-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            left: 29px;
-            top: 60px;
-            width: 2px;
-            height: calc(100% - 60px);
-            background: var(--border);
-        }
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+    width: 100%;
+    padding-left: 3rem;
+}
 
-        .timeline-dot {
-            width: 12px;
-            height: 12px;
-            background: var(--black);
-            border-radius: 50%;
-            margin-top: 6px;
-            position: relative;
-            z-index: 1;
-        }
+.timeline-box {
+    background: #F8F8F8;
+    border: 2px solid var(--black);
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    transition: all 0.3s;
+}
 
-        .timeline-item:nth-child(odd) .timeline-dot {
-            background: var(--accent-red);
-        }
+.timeline-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 0px var(--black);
+}
 
-        .timeline-item:nth-child(even) .timeline-dot {
-            background: var(--accent-blue);
-        }
+/* Dot on the left line */
+.timeline-box::before {
+    content: '';
+    position: absolute;
+    left: -3.9rem;
+    top: 30px;
+    width: 15px;
+    height: 15px;
+    background: var(--accent-blue);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 2px var(--black);
+    z-index: 1;
+}
 
-        .timeline-text h3 {
-            font-size: 1rem;
-            font-weight: 800;
-            color: var(--black);
-            margin-bottom: 0.3rem;
-            letter-spacing: -0.5px;
-        }
+/* Alternate colors for dots */
+.timeline-item:nth-child(odd) .timeline-box::before {
+    background: var(--accent-red);
+}
 
-        .timeline-text p {
-            font-size: 0.85rem;
-            color: var(--text);
-            line-height: 1.6;
-        }
+.timeline-item:nth-child(even) .timeline-box::before {
+    background: var(--accent-blue);
+}
 
+.timeline-year {
+    display: inline-block;
+    background: var(--black);
+    color: var(--white);
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+}
+
+.timeline-box h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    color: var(--black);
+    margin-bottom: 1rem;
+    letter-spacing: -0.5px;
+    line-height: 1.4;
+}
+
+.timeline-box p {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-item {
+        padding-left: 2rem;
+    }
+    
+    .timeline-box::before {
+        left: -2.9rem;
+    }
+}
         /* Contact Section */
         .contact {
             padding: 6rem 3rem;
@@ -706,7 +881,7 @@
 <body>
     <!-- Navigation -->
     <nav>
-        <div class="logo">AR</div>
+        <div class="logo">AG R</div>
         <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
@@ -721,41 +896,42 @@
     <section class="about" id="about">
         <div class="container">
             <div class="profile-header">
-                <h1>Amirthaganesh R</h1>
+                <h1>Amirtha Ganesh R</h1>
                 <p class="subtitle">Data Scientist | Data Analyst | ML Engineer</p>
             </div>
             
             <div class="about-grid">
                 <div class="about-text">
-                    <p>I'm a Data Science graduate student at VIT with a passion for building intelligent systems. From synthetic data generation with GANs to waste classification using computer vision, I transform complex problems into elegant ML solutions.</p>
-                    <p>My work spans deep learning, feature engineering, and deploying production-ready models. Currently published at IEEE CICN 2025 and building scalable AI systems with proven impact—from 88.8% accuracy in waste sorting to 78% reduction in data inconsistencies.</p>
+                    <p>I’m a final year M.Sc. Data Science student at VIT-AP with a strong passion for solving real-world problems through data. I hold a B.Sc. (Honors) in Data Science & Analytics from Sharda University, Delhi, and bring over five years of academic experience in data science, machine learning, deep learning, data analysis, and statistical modeling. I enjoy working hands on with data, transforming raw information into meaningful insights, and I’m comfortable owning the full ML lifecyclefrom analysis and feature engineering to model development and deployment</p>
+                    <p>My work focuses on the full analytics spectrum descriptive, diagnostic, predictive, and prescriptive along with post deployment model improvement, with an emphasis on accuracy, robustness, and real-world impact. I’ve optimized ML/DL models through continuous experimentation and evaluation, and I currently have a research paper in the publishing pipeline at IEEE CICN 2025. Curious by nature and driven by challenges, I’m always eager to build data-driven systems that make a measurable differe</p>
                     
                     <div class="action-buttons">
                         <a href="#projects" class="btn">View Work</a>
                         <a href="https://github.com/Data-pageup" target="_blank" class="btn btn-outline">GitHub</a>
                         <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://drive.google.com/file/d/1GQLnb-cvMmN3IOkFZT1UxNZGU3XbMuht/view?usp=drive_link" target="_blank" class="btn btn-outline">Résumé</a>
                     </div>
                 </div>
                 <div class="stats-list">
                     <div class="stat-item">
+                        <div class="stat-number">5+ YEARS</div>
+                        <div class="stat-label">DATA SCIENCE EXPERIENCE</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">MY CYCLE</div>
+                        <div class="stat-label">BUILD · DEPLOY · IMPROVE</div>
+                    </div>
+                    <div class="stat-item">
                         <div class="stat-number">17+</div>
-                        <div class="stat-label">ML Projects Deployed</div>
+                        <div class="stat-label">PRODUCTION READY MODELS</div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">8.43</div>
-                        <div class="stat-label">M.Sc CGPA (VIT)</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">12+</div>
-                        <div class="stat-label">Certifications</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Expert</div>
-                        <div class="stat-label">Good at Analysis</div>
+                        <div class="stat-number">DATA PRACTITIONER</div>
+                        <div class="stat-label">DESCRIPTIVE → PRESCRIPTIVE</div>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="AGR.jpg" alt="Amirthaganesh R - Data Scientist">
+                    <img src="my/AGR.jpg" alt="Amirthaganesh R - Data Scientist">
                 </div>
             </div>
         </div>
@@ -817,7 +993,7 @@
                     <div class="skill-item">NLP (Text Classification, Sentiment Analysis)</div>
                     <div class="skill-item">Computer Vision (Object Detection, Classification)</div>
                     <div class="skill-item">Time Series Analysis (ARIMA, Prophet)</div>
-                    <div class="skill-item">Big Data (Apache Spark, Hadoop)</div>
+                    <div class="skill-item">Big Data (Hadoop)</div>
                     <div class="skill-item">Model Optimization & Hyperparameter Tuning</div>
                 </div>
             </div>
@@ -847,7 +1023,7 @@
                 <!-- Project 1: Hybrid GAN Data Synthesizer -->
                 <div class="project-card" data-category="deep-learning">
                     <div class="project-visual">
-                        <img src="hybrid-GAN.jfif" alt="Hybrid GAN Data Synthesizer">
+                        <img src="project_images/hybrid-GAN.jfif"" alt="Hybrid GAN Data Synthesizer">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Hybrid GAN Data Synthesizer</div>
@@ -864,7 +1040,7 @@
                 <!-- Project 2: SmartFit AI -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
-                        <img src="smartfit.jfif" alt="SmartFit AI">
+                        <img src="project_images/smartfit.jfif" alt="SmartFit AI">
                     </div>
                     <div class="project-content">
                         <div class="project-title">SmartFit AI</div>
@@ -882,7 +1058,7 @@
                 <!-- Project 3: RippleWorks -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
-                        <img src="Rippleworks.jfif" alt="RippleWorks">
+                        <img src="project_images/Rippleworks.jfif" alt="RippleWorks">
                     </div>
                     <div class="project-content">
                         <div class="project-title">RippleWorks</div>
@@ -899,7 +1075,7 @@
                 <!-- Project 4: Sequential Neural Networks Sentiment Analysis -->
                 <div class="project-card" data-category="nlp">
                     <div class="project-visual">
-                        <img src="Sentiment Analysis RNN.jfif" alt="Sentiment Analysis RNN">
+                        <img src="project_images/Sentiment Analysis RNN.jfif" alt="Sentiment Analysis RNN">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Sentiment Analysis RNN</div>
@@ -917,7 +1093,7 @@
                 <!-- Project 5: News Authenticity Detection -->
                 <div class="project-card" data-category="nlp">
                     <div class="project-visual">
-                        <img src="News Authenticity Detection.jfif" alt="News Authenticity Detection">
+                        <img src="project_images/News Authenticity Detection.jfif" alt="News Authenticity Detection">
                     </div>
                     <div class="project-content">
                         <div class="project-title">News Authenticity Detection</div>
@@ -934,7 +1110,7 @@
                 <!-- Project 6: Drone Livestock Detection -->
                 <div class="project-card" data-category="computer-vision">
                     <div class="project-visual">
-                        <img src="Drone Livestock Detection.png" alt="Drone Livestock Detection">
+                        <img src="project_images/Drone Livestock Detection.png" alt="Drone Livestock Detection">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Drone Livestock Detection</div>
@@ -951,7 +1127,7 @@
                 <!-- Project 7: YOLOv8 Garbage Detection -->
                 <div class="project-card" data-category="computer-vision">
                     <div class="project-visual">
-                        <img src="Garbage Detection.png" alt="YOLOv8 Garbage Detection">
+                        <img src="project_images/Garbage Detection.png" alt="YOLOv8 Garbage Detection">
                     </div>
                     <div class="project-content">
                         <div class="project-title">YOLOv8 Garbage Detection</div>
@@ -968,7 +1144,7 @@
                 <!-- Project 8: Maharashtra QSR Site Selection -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
-                        <img src="QSR.png" alt="QSR Site Selection Analysis">
+                        <img src="project_images/QSR.png" alt="QSR Site Selection Analysis">
                     </div>
                     <div class="project-content">
                         <div class="project-title">QSR Site Selection Analysis</div>
@@ -985,7 +1161,7 @@
                 <!-- Project 9: E-Commerce Market Viability -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
-                        <img src="E-Commerce Market Viability.jfif" alt="E-Commerce Market Viability">
+                        <img src="project_images/E-Commerce Market Viability.jfif" alt="E-Commerce Market Viability">
                     </div>
                     <div class="project-content">
                         <div class="project-title">E-Commerce Market Viability</div>
@@ -1002,7 +1178,7 @@
                 <!-- Project 10: Aircraft Engine Anomaly Detection -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
-                        <img src="Aircraft Engine Anomaly Detection.png" alt="Aircraft Engine Anomaly Detection">
+                        <img src="project_images/Aircraft Engine Anomaly Detection.png" alt="Aircraft Engine Anomaly Detection">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Aircraft Engine Anomaly Detection</div>
@@ -1019,7 +1195,7 @@
                 <!-- Project 11: Energy Demand Forecasting -->
                 <div class="project-card" data-category="time-series">
                     <div class="project-visual">
-                        <img src="Energy Demand Forecasting.jfif" alt="Energy Demand Forecasting">
+                        <img src="project_images/Energy Demand Forecasting.jfif" alt="Energy Demand Forecasting">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Energy Demand Forecasting</div>
@@ -1036,7 +1212,7 @@
                 <!-- Project 12: Student Performance Prediction -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
-                        <img src="student academic performance.jfif" alt="Student Performance Prediction">
+                        <img src="project_images/student academic performance.jfif" alt="Student Performance Prediction">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Student Performance Prediction</div>
@@ -1054,7 +1230,7 @@
                 <!-- Project 13: Handwritten Digit Recognition -->
                 <div class="project-card" data-category="deep-learning">
                     <div class="project-visual">
-                        <img src="Handwritten digit recognition.png" alt="Handwritten Digit Recognition">
+                        <img src="project_images/Handwritten digit recognition.png" alt="Handwritten Digit Recognition">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Handwritten Digit Recognition</div>
@@ -1071,7 +1247,7 @@
                 <!-- Project 14: Deep Learning Experiments -->
                 <div class="project-card" data-category="deep-learning">
                     <div class="project-visual">
-                        <img src="Deep Learning Experiments.png" alt="Deep Learning Experiments">
+                        <img src="project_images/Deep Learning Experiments.png" alt="Deep Learning Experiments">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Deep Learning Experiments</div>
@@ -1088,7 +1264,7 @@
                 <!-- Project 15: Financial Time-Series Forecasting -->
                 <div class="project-card" data-category="time-series">
                     <div class="project-visual">
-                        <img src="TESLA Daily Return Prediction.png" alt="TESLA Daily Return Prediction">
+                        <img src="project_images/TESLA Daily Return Prediction.png" alt="TESLA Daily Return Prediction">
                     </div>
                     <div class="project-content">
                         <div class="project-title">TESLA Daily Return Prediction</div>
@@ -1105,7 +1281,7 @@
                 <!-- Project 16: Diabetes Readmission Prediction -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
-                        <img src="Diabetes Readmission Prediction.jfif" alt="Diabetes Readmission Prediction">
+                        <img src="project_images/Diabetes Readmission Prediction.jfif" alt="Diabetes Readmission Prediction">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Diabetes Readmission Prediction</div>
@@ -1123,7 +1299,7 @@
                 <!-- Project 17: Trader Behavior vs Market Sentiment -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
-                        <img src="Trader Behavior vs Market Sentiment.jpg" alt="Trader Behavior vs Market Sentiment">
+                        <img src="project_images/Trader Behavior vs Market Sentiment.jpg" alt="Trader Behavior vs Market Sentiment">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Trader Behavior vs Market Sentiment</div>
@@ -1153,51 +1329,51 @@
                 <div class="certificate-image-container">
                     <!-- Certificate 0: IEEE Publication -->
                     <div class="certificate-card active" data-cert="0">
-                        <img src="IEEE-certificate.png" alt="IEEE CICN 2025 Publication Certificate">
+                        <img src="certificate/IEEE-certificate.png" alt="IEEE CICN 2025 Publication Certificate">
                     </div>
                     <!-- Certificate 1: Oracle Cloud Data Science -->
                     <div class="certificate-card" data-cert="1">
-                        <img src="Oracle Cloud-Data Science.png" alt="Oracle Cloud Data Science Professional">
+                        <img src="certificate/Oracle Cloud-Data Science.png" alt="Oracle Cloud Data Science Professional">
                     </div>
                     <!-- Certificate 2: Kaggle Geospatial Analysis -->
                     <div class="certificate-card" data-cert="2">
-                        <img src="Kaggle Geospatial Analysis.png" alt="Kaggle Geospatial Analysis">
+                        <img src="certificate/Kaggle Geospatial Analysis.png" alt="Kaggle Geospatial Analysis">
                     </div>
                     <!-- Certificate 3: British Airways Data Science Simulation -->
                     <div class="certificate-card" data-cert="3">
-                        <img src="British Airways-Data Science job simulation.png" alt="British Airways Data Science Job Simulation">
+                        <img src="certificate/British Airways-Data Science job simulation.png" alt="British Airways Data Science Job Simulation">
                     </div>
                     <!-- Certificate 4: Databricks SQL and Power BI -->
                     <div class="certificate-card" data-cert="4">
-                        <img src="Databricks in sql and power bi.png" alt="Databricks SQL and Power BI">
+                        <img src="certificate/Databricks in sql and power bi.png" alt="Databricks SQL and Power BI">
                     </div>
                     <!-- Certificate 5: Deloitte Data Analytics Simulation -->
                     <div class="certificate-card" data-cert="5">
-                        <img src="Deloitte- Data Analytics job simulation.png" alt="Deloitte Data Analytics Job Simulation">
+                        <img src="certificate/Deloitte- Data Analytics job simulation.png" alt="Deloitte Data Analytics Job Simulation">
                     </div>
                     <!-- Certificate 6: HP Life Data Science & Analytics -->
                     <div class="certificate-card" data-cert="6">
-                        <img src="Hp-life- Data Science&Analytics.png" alt="HP Life Data Science & Analytics">
+                        <img src="certificate/Hp-life- Data Science&Analytics.png" alt="HP Life Data Science & Analytics">
                     </div>
                     <!-- Certificate 7: HP Life Effective Presentation -->
                     <div class="certificate-card" data-cert="7">
-                        <img src="Hp -life-Effective Presentation.png" alt="HP Life Effective Presentations">
+                        <img src="certificate/Hp -life-Effective Presentation.png" alt="HP Life Effective Presentations">
                     </div>
                     <!-- Certificate 8: HP Life Presenting Data -->
                     <div class="certificate-card" data-cert="8">
-                        <img src="HP-life -Presenting Data.png" alt="HP Life Presenting Data">
+                        <img src="certificate/HP-life -Presenting Data.png" alt="HP Life Presenting Data">
                     </div>
                     <!-- Certificate 9: University of Washington Machine Learning -->
                     <div class="certificate-card" data-cert="9">
-                        <img src="University OF washiton-Machine Learning Foundations.png" alt="University of Washington Machine Learning Foundations">
+                        <img src="certificate/University OF washiton-Machine Learning Foundations.png" alt="University of Washington Machine Learning Foundations">
                     </div>
                     <!-- Certificate 10: Business Analytics with Excel -->
                     <div class="certificate-card" data-cert="10">
-                        <img src="Business analytics with Excel.png" alt="Business Analytics with Excel">
+                        <img src="certificate/Business analytics with Excel.png" alt="Business Analytics with Excel">
                     </div>
                     <!-- Certificate 11: Sharda University Hackathon -->
                     <div class="certificate-card" data-cert="11">
-                        <img src="ShardaUniversity_hackathon.png" alt="Sharda University Hackathon Certificate">
+                        <img src="certificate/ShardaUniversity_hackathon.png" alt="Sharda University Hackathon Certificate">
                     </div>
                 </div>
 
@@ -1638,42 +1814,55 @@
     </section>
 
     <!-- Timeline Section (Journey) -->
-    <section class="timeline" id="timeline">
+<section class="timeline" id="timeline">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Journey</h2>
                 <div class="section-line"></div>
             </div>
             <div class="timeline-content">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-text">
+                <!-- Item 1: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2020-2023</div>
                         <h3>B.Sc Data Science & Analytics – Sharda University, Delhi</h3>
-                        <p>Graduated with Honors. Participated in 3 hackathon-based competitions, gaining hands-on experience in rapid prototyping and team collaboration. Founded a startup venture exploring data-driven solutions, which provided invaluable entrepreneurial insights. Built strong foundation in statistical modeling, ML algorithms, and data analysis.</p>
+                        <p>Graduated with Honors, building a strong foundation in statistical modeling, ML algorithms, and data analysis. Participated in 3 hackathon-based competitions, gaining hands-on experience in rapid prototyping and team collaboration. Founded a startup venture exploring data-driven solutions, which provided invaluable entrepreneurial insights into product development and business analytics.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-text">
-                        <h3> Data Analyst Intern – White Elephant</h3>
-                        <p>Analyzed 100K+ records achieving 85% data quality improvement. Applied t-SNE, PCA reducing feature space by 40% while maintaining 92% variance. Improved model accuracy by 12% through regularization.</p>
+                <!-- Item 2: Right Side -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-box">
+                        <div class="timeline-year">June 2022 - Aug 2022</div>
+                        <h3>Data Analyst Intern – White Elephant</h3>
+                        <p>Analyzed 100K+ records achieving 85% data quality improvement through comprehensive data cleaning and validation pipelines. Applied dimensionality reduction techniques including t-SNE and PCA, reducing feature space by 40% while maintaining 92% variance. Improved model accuracy by 12% through advanced regularization techniques and feature engineering.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-text">
+                <!-- Item 3: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">June 2024 - Aug 2024</div>
+                        <h3>Data Science Intern – MBA Bazaar</h3>
+                        <p>Analyzed mock test, MCQ, and quiz data for CAT/XAT/GMAT prep platforms to identify topic-wise accuracy, time spent per question, and performance drop-offs. Built student performance tracking logic to classify users into beginner/intermediate/exam-ready segments. Cleaned and structured raw learner data including attempts, scores, retries, and engagement metrics using Python (Pandas, NumPy). Created predictive models to estimate exam readiness based on mock scores and practice consistency. Designed dashboards using Excel, Power BI, and Google Data Studio for mentors to monitor batch-wise progress. Conducted analysis on content effectiveness across case studies, workshops, and live sessions to identify learning interventions that improved scores. Supported the product team with data-backed insights for optimizing learning paths and mock test difficulty calibration.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Right Side -->
+                <div class="timeline-item timeline-right">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2024-2026</div>
                         <h3>M.Sc Data Science – VIT, AP</h3>
-                        <p>Currently pursuing with CGPA 8.43/10.0. Specializing in deep learning, GANs, computer vision, and production ML systems.</p>
+                        <p>Currently pursuing with CGPA 8.43/10.0, specializing in statistical modeling, deep learning, machine learning, computer vision, and production ML systems. Serving as co-leader of the Data Science Club, fostering collaborative learning and organizing technical workshops. Completed multiple academic projects under different mentors, focusing on machine learning and deep learning architectures including CNNs for image classification and computer vision tasks. Developed BrainWeave, an information retrieval system that converts PDF and Word documents into visually structured mindmaps to enhance comprehension and learning efficiency. Working extensively with convolutional neural networks for various computer vision applications.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-text">
+                <!-- Item 5: Left Side -->
+                <div class="timeline-item timeline-left">
+                    <div class="timeline-box">
+                        <div class="timeline-year">2025</div>
                         <h3>IEEE Publication & Oracle Certification</h3>
-                        <p>Published research at IEEE CICN 2025. Earned Oracle Cloud Infrastructure 2025 Certified Data Science Professional. Building scalable AI solutions.</p>
+                        <p>Published research paper "Dimensionality Reduction for Intrusion Detection Using Crow Search Optimization and Grey Wolf Optimization" at the 2025 IEEE 17th International Conference on Computational Intelligence and Communication Networks (CICN) held at National Institute of Technology, Goa. Currently in the publishing pipeline. Earned Oracle Cloud Infrastructure 2025 Certified Data Science Professional certification, demonstrating expertise in cloud-based ML deployment and scalable AI solutions.</p>
                     </div>
                 </div>
             </div>
@@ -1683,7 +1872,7 @@
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title" style="color: var(--white); margin-bottom: 1rem;">Let's Connect</h2>
-        <p class="contact-text">Open to collaborations, research opportunities, and innovative data science projects.</p>
+        <p class="contact-text">Open to collaborations, research opportunities, internships, and full-time roles in data science.</p>
         <div class="contact-links">
             <a href="mailto:amirthaganeshofficial@gmail.com" class="contact-link">Email</a>
             <a href="https://github.com/Data-pageup" target="_blank" class="contact-link">GitHub</a>
@@ -1714,6 +1903,7 @@
             currentCertIndex = index;
             updateCarousel();
         }
+
         function updateCarousel() {
             // Update certificate cards
             const cards = document.querySelectorAll('.certificate-card');
@@ -1723,6 +1913,7 @@
                     card.classList.add('active');
                 }
             });
+
             // Update certificate info
             const infos = document.querySelectorAll('.certificate-info');
             infos.forEach((info, index) => {
@@ -1770,5 +1961,8 @@
             });
         }
     </script>
+
+
+ 
 </body>
 </html>
