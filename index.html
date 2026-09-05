@@ -1069,61 +1069,59 @@
             </div>
 
             <div class="projects-grid">
-                <!-- Project 0: HMH TechHub Agentic AI System (FEATURED - GenAI flagship, real production work) -->
+                <!-- Project: Multi-Model PDF Assistant (FEATURED - GenAI, RAG) -->
                 <div class="project-card featured" data-category="genai">
                     <div class="project-visual">
-                        <img src="project_images/hmh-agentic-ai.png" alt="LLM Data Pipeline & Agentic HR Automation">
+                        <img src="project_images/multi-model-pdf-assistant.png" alt="Multi-Model PDF Assistant">
                     </div>
                     <div class="project-content">
-                        <span class="featured-tag">Flagship · Production GenAI</span>
-                        <div class="project-title">LLM Data Pipeline & Agentic HR Automation</div>
-                        <p class="project-description">Built an end-to-end LLM data pipeline at HMH TechHub, processing 10+ PDFs into 410K+ BPE tokens and 768-dimensional BERT embeddings for retrieval and generation. Automated the full HR hiring process using LangGraph, built lightweight agents with LangChain for simpler workflows, and shipped a RAG system on Qdrant with n8n-based analytics reporting.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Engineering the agents with Pydantic AI and Docker made the difference between a demo and something deployable — type-safe, validated outputs the HR team could actually trust in production.</div>
+                        <span class="featured-tag">RAG · Multi-LLM</span>
+                        <div class="project-title">Multi-Model PDF Assistant</div>
+                        <p class="project-description">Upload one or more PDFs, choose your preferred LLM provider, and chat with your documents using a Retrieval-Augmented Generation pipeline. Documents are chunked and embedded locally, then retrieved against a Chroma vector store before being passed through Groq or Google Gemini.</p>
+                        <div class="project-insight">💡 <strong>Insight:</strong> Letting users switch between Groq and Gemini per session — with API keys never stored — made it a genuinely reusable tool rather than a single-provider demo.</div>
                         <div class="project-tech">
-                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">RAG</span>
                             <span class="tech-badge">LangChain</span>
-                            <span class="tech-badge">RAG · Qdrant</span>
-                            <span class="tech-badge">Pydantic AI</span>
-                            <span class="tech-badge">Docker</span>
+                            <span class="tech-badge">ChromaDB</span>
                         </div>
-                        <span class="project-link" style="cursor:default;border-bottom:none;">HMH TechHub · Jan–May 2026</span>
+                        <a href="https://github.com/Data-pageup/Multi_Model_Assistant" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://multi-docs.streamlit.app" class="project-link" target="_blank">Live Demo</a>
                     </div>
                 </div>
 
-                <!-- Project: EcoWaste AI -->
-                <div class="project-card" data-category="computer-vision">
+                <!-- Project: Multi-Agent Research System -->
+                <div class="project-card" data-category="genai">
                     <div class="project-visual">
-                        <img src="project_images/ecowaste-ai.png" alt="EcoWaste AI">
+                        <img src="project_images/multi-agent-research-system.png" alt="Multi-Agent Research System">
                     </div>
                     <div class="project-content">
-                        <div class="project-title">EcoWaste AI</div>
-                        <p class="project-description">Predictive waste sorting and recycling optimizer using MobileNetV2 transfer learning for Organic/Recyclable classification on 25K+ images, paired with a regressor for CO2 savings and clustering for personalized sustainability tips.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> 88.8% classification accuracy plus an R² of 0.96 on CO2 savings meant the tool could tell users not just how to sort waste, but what their sorting actually saved.</div>
+                        <div class="project-title">Multi-Agent Research System</div>
+                        <p class="project-description">A local multi-agent research system built with LangChain that automates a structured research workflow — a Search Agent and Reader Agent gather and scrape sources, a Writer Chain drafts the report, and a Critic Chain reviews it before it's finalized.</p>
+                        <div class="project-insight">💡 <strong>Insight:</strong> Adding a dedicated Critic Chain instead of accepting the Writer's first draft caught weak or unsupported claims that a single-pass LLM report would have shipped as-is.</div>
                         <div class="project-tech">
-                            <span class="tech-badge">MobileNetV2</span>
-                            <span class="tech-badge">Random Forest</span>
-                            <span class="tech-badge">K-Means</span>
+                            <span class="tech-badge">LangChain</span>
+                            <span class="tech-badge">Multi-Agent</span>
+                            <span class="tech-badge">Web Scraping</span>
                         </div>
-                        <a href="https://github.com/Data-pageup" class="project-link" target="_blank">GitHub</a>
+                        <a href="https://github.com/Data-pageup/multi_agent_system" class="project-link" target="_blank">GitHub</a>
                     </div>
                 </div>
 
                 <!-- Project: FIFA World Cup 2026 Prediction -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
-                        <img src="project_images/fifa-world-cup-2026.png" alt="FIFA World Cup 2026 Outcome Prediction">
+                        <img src="project_images/FIFA_2026_worldcup.png" alt="FIFA 2026 World Cup Outcome Prediction">
                     </div>
                     <div class="project-content">
-                        <div class="project-title">FIFA World Cup 2026 Outcome Prediction</div>
-                        <p class="project-description">Forecasting pipeline using dual Poisson regression models and custom Elo ratings, simulating the full 48-team tournament — groups, third-place qualification, and knockouts — through 1,000 Monte Carlo runs.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Simulating 1,000 tournament runs surfaced a probabilistic favorite (Spain at 26.9%) instead of a single guess, which is a far more honest answer for a 48-team knockout format.</div>
+                        <div class="project-title">FIFA 2026 World Cup Outcome Prediction</div>
+                        <p class="project-description">A data-driven prediction system using Poisson Regression and Monte Carlo Simulation. Two Poisson models predict home and away team goals from historical match data, powering a match-level simulator that runs the full 48-team tournament 1,000 times to produce stage-by-stage qualification probabilities for every nation.</p>
+                        <div class="project-insight">💡 <strong>Insight:</strong> Running 1,000 full-tournament simulations turns match-level goal predictions into stage-by-stage qualification odds — a far more honest answer than a single bracket guess for a 48-team format.</div>
                         <div class="project-tech">
                             <span class="tech-badge">Poisson Regression</span>
                             <span class="tech-badge">Monte Carlo</span>
-                            <span class="tech-badge">Elo Ratings</span>
+                            <span class="tech-badge">Python</span>
                         </div>
-                        <a href="https://github.com/Data-pageup" class="project-link" target="_blank">GitHub</a>
-                        <a href="#" class="project-link" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Data-pageup/FIFA-2026-Outcome-Prediction-Using-Poisson-Regression-and-Monte-Carlo-Simulation" class="project-link" target="_blank">GitHub</a>
                     </div>
                 </div>
 
@@ -1619,3 +1617,5 @@
  
 </body>
 </html>
+
+
