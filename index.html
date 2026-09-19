@@ -87,101 +87,123 @@
             margin: 0 auto;
         }
 
-        /* About */
+        /* Hero */
         .about {
-            padding: 7rem 3rem 3.5rem 3rem;
+            padding: 7.5rem 3rem 3.5rem 3rem;
             background: var(--white);
             border-bottom: 1px solid var(--border);
         }
 
-        .profile-header {
-            text-align: left;
-            margin-bottom: 2rem;
+        .hero {
+            display: grid;
+            grid-template-columns: 1.35fr 0.65fr;
+            gap: 4rem;
+            align-items: center;
         }
 
-        .profile-header h1 {
-            font-size: 3.5rem;
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.6rem);
             font-weight: 900;
             color: var(--black);
-            letter-spacing: -2px;
-            margin-bottom: 0.5rem;
+            letter-spacing: -3px;
+            line-height: 1.02;
+            margin-bottom: 1.1rem;
         }
 
-        .profile-header .subtitle {
-            font-size: 1.3rem;
-            color: var(--text);
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 0.7fr 0.5fr;
-            gap: 0;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: var(--text);
-            text-align: left;
-        }
-
-        .about-text p { margin-bottom: 1.5rem; }
-
-        .stats-list {
+        .roles {
             display: flex;
-            flex-direction: column;
-            gap: 2rem;
-            margin-left: 5rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.75rem;
         }
 
-        .stat-item {
-            border-left: 3px solid var(--black);
-            padding-left: 1.5rem;
+        .role {
+            border: 2px solid var(--black);
+            padding: 0.3rem 0.85rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--white);
+            color: var(--black);
         }
 
-        .stat-number {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--accent-blue);
-            line-height: 1;
-            margin-bottom: 0.3rem;
+        .role.primary {
+            background: var(--black);
+            color: var(--white);
         }
 
-        .stat-label {
-            font-size: 0.8rem;
-            color: var(--text);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .about-image {
-            width: 100%;
-            border: 3px solid var(--black);
-            box-shadow: 10px 10px 0px var(--black);
-            transition: all 0.3s;
-            overflow: hidden;
-        }
-
-        .about-image:hover {
-            transform: translate(-5px, -5px);
-            box-shadow: 15px 15px 0px var(--black);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
+        .lede {
+            font-size: 1.1rem;
+            line-height: 1.75;
+            max-width: 38rem;
+            margin-bottom: 2rem;
         }
 
         .action-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
-            margin-top: 2rem;
         }
+
+        .action-buttons .btn { padding: 0.8rem 1.5rem; }
+
+        .status {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+        }
+
+        .status .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #2A9D8F;
+            flex-shrink: 0;
+        }
+
+        .hero-photo {
+            justify-self: end;
+            width: 100%;
+            max-width: 340px;
+            border: 3px solid var(--black);
+            box-shadow: 10px 10px 0px var(--black);
+            transition: transform 0.3s, box-shadow 0.3s;
+            overflow: hidden;
+        }
+
+        .hero-photo:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px var(--black);
+        }
+
+        .hero-photo img { width: 100%; height: auto; display: block; }
+
+        .facts {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2px;
+            background: var(--black);
+            border: 2px solid var(--black);
+            margin-top: 3.5rem;
+        }
+
+        .fact {
+            background: var(--white);
+            padding: 1.1rem 1.25rem 1.2rem 1.25rem;
+            border-top: 6px solid var(--c, var(--black));
+        }
+
+        .fact strong {
+            display: block;
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--black);
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.3px;
+        }
+
+        .fact span { font-size: 0.82rem; line-height: 1.45; display: block; }
 
         .btn {
             padding: 0.8rem 2rem;
@@ -692,9 +714,9 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-            .stats-list { margin-left: 0; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
-            .about-image { max-width: 320px; }
+            .hero { grid-template-columns: 1fr; gap: 2.5rem; }
+            .hero-photo { justify-self: start; max-width: 300px; }
+            .facts { grid-template-columns: repeat(2, 1fr); }
             .projects-grid { grid-template-columns: repeat(2, 1fr); }
             .achievements-carousel { grid-template-columns: 1fr; gap: 2rem; }
             .certificate-image-container { order: 2; }
@@ -708,8 +730,9 @@
             html { scroll-padding-top: 8rem; }
             .about { padding: 9rem 1.25rem 3rem 1.25rem; }
             section.block, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
-            .profile-header h1 { font-size: 2.2rem; }
-            .profile-header .subtitle { font-size: 1rem; }
+            .hero h1 { letter-spacing: -2px; }
+            .lede { font-size: 1rem; }
+            .facts { grid-template-columns: 1fr; }
             .section-title { font-size: 1.8rem; white-space: normal; }
             .section-header { gap: 1rem; }
             .skill-row { grid-template-columns: 1fr; }
@@ -733,46 +756,47 @@
         </ul>
     </nav>
 
-    <!-- About Section -->
+    <!-- About / Hero -->
     <section class="about" id="about">
         <div class="container">
-            <div class="profile-header">
-                <h1>Amirtha Ganesh R</h1>
-                <p class="subtitle">Data Scientist | ML Engineer | GenAI &amp; Agentic AI</p>
-            </div>
-
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>I'm a data scientist and ML engineer with an M.Sc. in Data Science from VIT-AP and a B.Sc. (Honors) in Data Science &amp; Analytics from Sharda University, Delhi. My work spans the full ML lifecycle, from statistical modeling and deep learning to, most recently, building production LLM and agentic AI systems.</p>
-                    <p>At HMH TechHub, I built an end-to-end LLM data pipeline and automated HR workflows using LangGraph and LangChain, backed by a RAG system on Qdrant and production agents built with Pydantic AI and Docker. Earlier roles at MBA Bazaar and White Elephant sharpened my grounding in predictive modeling and data quality engineering. My research on optimization-based intrusion detection was published at IEEE CICN 2025, and I'm Oracle-certified in both Data Science and Agentic AI Foundations.</p>
-
+            <div class="hero">
+                <div class="hero-text">
+                    <h1>Amirtha Ganesh R</h1>
+                    <div class="roles">
+                        <span class="role primary">Data Scientist</span>
+                        <span class="role">ML Engineer</span>
+                        <span class="role">GenAI &amp; Agentic AI</span>
+                    </div>
+                    <p class="lede">I build data and AI systems end to end, from statistical models and deep learning to production LLM agents. I recently finished my M.Sc. in Data Science at VIT-AP, and at HMH TechHub I built a RAG pipeline on Qdrant, automated HR hiring with LangGraph, and engineered type-safe agents with Pydantic AI and Docker.</p>
                     <div class="action-buttons">
                         <a href="#projects" class="btn">View Work</a>
+                        <a href="https://drive.google.com/file/d/1lCUln8ABxC3rwf-xlOJnGSewihszdeMC/view?usp=drivesdk" target="_blank" rel="noopener" class="btn btn-outline">Résumé</a>
                         <a href="https://github.com/Data-pageup" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
                         <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
-                        <a href="https://drive.google.com/file/d/1lCUln8ABxC3rwf-xlOJnGSewihszdeMC/view?usp=drivesdk" target="_blank" rel="noopener" class="btn btn-outline">Résumé</a>
                     </div>
+                    <p class="status"><span class="dot" aria-hidden="true"></span>Open to full-time roles, internships and research collaborations</p>
                 </div>
-                <div class="stats-list">
-                    <div class="stat-item">
-                        <div class="stat-number">3</div>
-                        <div class="stat-label">DATA SCIENCE INTERNSHIPS</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">PRODUCTION AGENTIC AI SYSTEM</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">4</div>
-                        <div class="stat-label">CERTIFICATIONS</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">1</div>
-                        <div class="stat-label">IEEE RESEARCH PUBLICATION</div>
-                    </div>
+                <div class="hero-photo">
+                    <img src="my/AGR.jpg" alt="Amirtha Ganesh R, data scientist">
                 </div>
-                <div class="about-image">
-                    <img src="my/AGR.jpg" alt="Amirthaganesh R - Data Scientist">
+            </div>
+
+            <div class="facts">
+                <div class="fact" style="--c: var(--accent-red)">
+                    <strong>M.Sc. Data Science</strong>
+                    <span>VIT-AP, completed 2026</span>
+                </div>
+                <div class="fact" style="--c: var(--accent-blue)">
+                    <strong>3 internships</strong>
+                    <span>HMH TechHub, MBA Bazaar, White Elephant</span>
+                </div>
+                <div class="fact" style="--c: #FF6B35">
+                    <strong>IEEE CICN 2025</strong>
+                    <span>Intrusion detection paper, NIT Goa</span>
+                </div>
+                <div class="fact" style="--c: #2A9D8F">
+                    <strong>Oracle certified</strong>
+                    <span>OCI Data Science and Agentic AI Foundations</span>
                 </div>
             </div>
         </div>
