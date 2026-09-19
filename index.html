@@ -10,18 +10,20 @@
             padding: 0;
             box-sizing: border-box;
         }
-   
+
         :root {
             --white: #FFFFFF;
             --black: #000000;
             --text: #1A1A1A;
             --border: #E5E5E5;
+            --soft: #F8F8F8;
             --accent-red: #E63946;
             --accent-blue: #1E90FF;
         }
 
         html {
             scroll-behavior: smooth;
+            scroll-padding-top: 5rem;
         }
 
         body {
@@ -31,12 +33,22 @@
             line-height: 1.6;
         }
 
+        :focus-visible {
+            outline: 3px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            * { animation: none !important; transition: none !important; }
+        }
+
         /* Navigation */
         nav {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 1.5rem 3rem;
+            padding: 1.2rem 3rem;
             background: var(--white);
             border-bottom: 1px solid var(--border);
             display: flex;
@@ -68,149 +80,143 @@
             text-transform: uppercase;
         }
 
-        nav a:hover {
+        nav a:hover { color: var(--accent-blue); }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* About */
+        .about {
+            padding: 7rem 3rem 3.5rem 3rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .profile-header {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .profile-header h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--black);
+            letter-spacing: -2px;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--text);
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 0.7fr 0.5fr;
+            gap: 0;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text);
+            text-align: left;
+        }
+
+        .about-text p { margin-bottom: 1.5rem; }
+
+        .stats-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-left: 5rem;
+        }
+
+        .stat-item {
+            border-left: 3px solid var(--black);
+            padding-left: 1.5rem;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--accent-blue);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .about-image {
+            width: 100%;
+            border: 3px solid var(--black);
+            box-shadow: 10px 10px 0px var(--black);
+            transition: all 0.3s;
+            overflow: hidden;
+        }
+
+        .about-image:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: 15px 15px 0px var(--black);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.8rem 2rem;
+            border: 2px solid var(--black);
+            background: var(--black);
+            color: var(--white);
+            cursor: pointer;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            background: var(--white);
             color: var(--black);
         }
 
-        /* About Section */
-/* About Section */
-.about {
-    padding: 7rem 3rem 4rem 3rem;
-    background: var(--white);
-    border-bottom: 1px solid var(--border);
-}
+        .btn-outline {
+            background: var(--white);
+            color: var(--black);
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
+        .btn-outline:hover {
+            background: var(--black);
+            color: var(--white);
+        }
 
-.profile-header {
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.profile-header h1 {
-    font-size: 3.5rem;
-    font-weight: 900;
-    color: var(--black);
-    letter-spacing: -2px;
-    margin-bottom: 0.5rem;
-}
-
-.profile-header .subtitle {
-    font-size: 1.3rem;
-    color: var(--text);
-    font-weight: 400;
-    letter-spacing: 0.5px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 0.7fr 0.5fr;
-    gap: 0rem;
-    align-items: start;
-    margin-bottom: 3rem;
-}
-
-.about-text {
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text);
-    text-align: left;
-}
-
-.about-text p {
-    margin-bottom: 1.5rem;
-}
-
-.stats-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    margin-left: 5rem;
-}
-
-.stat-item {
-    border-left: 3px solid var(--black);
-    padding-left: 1.5rem;
-}
-
-.stat-number {
-    font-size: 1.8rem;
-    font-weight: 800;
-    color: var(--accent-blue);
-    line-height: 1;
-    margin-bottom: 0.3rem;
-}
-
-.stat-label {
-    font-size: 0.8rem;
-    color: var(--text);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.about-image {
-    width: 100%;
-    border: 3px solid var(--black);
-    box-shadow: 10px 10px 0px var(--black);
-    transition: all 0.3s;
-    overflow: hidden;
-}
-
-.about-image:hover {
-    transform: translate(-5px, -5px);
-    box-shadow: 15px 15px 0px var(--black);
-}
-
-.about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.action-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-}
-
-.btn {
-    padding: 0.8rem 2rem;
-    border: 2px solid var(--black);
-    background: var(--black);
-    color: var(--white);
-    cursor: pointer;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    transition: all 0.3s;
-    text-transform: uppercase;
-    text-decoration: none;
-    display: inline-block;
-}
-
-.btn:hover {
-    background: var(--white);
-    color: var(--black);
-}
-
-.btn-outline {
-    background: var(--white);
-    color: var(--black);
-}
-
-.btn-outline:hover {
-    background: var(--black);
-    color: var(--white);
-}
-
-        /* Skills Section */
-        .skills {
-            padding: 6rem 3rem;
+        /* Section scaffolding */
+        section.block {
+            padding: 4.5rem 3rem;
             background: var(--white);
             border-bottom: 1px solid var(--border);
         }
@@ -219,7 +225,7 @@
             display: flex;
             align-items: baseline;
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2.25rem;
         }
 
         .section-title {
@@ -227,7 +233,7 @@
             font-weight: 900;
             color: var(--black);
             letter-spacing: -1px;
-            min-width: 300px;
+            white-space: nowrap;
         }
 
         .section-line {
@@ -236,133 +242,100 @@
             background: var(--border);
         }
 
-        .skills-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+        /* Skills: compact matrix */
+        .skill-legend {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.78rem;
+            margin: -1rem 0 1.25rem 0;
+            color: var(--text);
         }
 
-        .skill-category {
+        .skill-legend .chip { cursor: default; }
+
+        .skill-matrix {
             border: 2px solid var(--black);
-            padding: 1.5rem;
-            background: var(--white);
-            position: relative;
-            transition: all 0.3s;
         }
 
-        .skill-category:hover {
-            transform: translateY(-3px);
-            box-shadow: 4px 4px 0px var(--black);
+        .skill-row {
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            border-bottom: 2px solid var(--black);
         }
 
-        .skill-category-title {
+        .skill-row:last-child { border-bottom: none; }
+
+        .skill-row-label {
+            padding: 0.9rem 1.1rem;
             font-size: 0.85rem;
             font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: var(--black);
             color: var(--white);
-            background: var(--black);
-            padding: 0.6rem 1rem;
-            margin: -1.5rem -1.5rem 1.2rem -1.5rem;
-            position: relative;
+            border-left: 8px solid var(--row-color, var(--accent-blue));
+            display: flex;
+            align-items: center;
         }
 
-        .skill-category:nth-child(1) .skill-category-title {
-            background: var(--accent-red);
-        }
-
-        .skill-category:nth-child(2) .skill-category-title {
-            background: var(--accent-blue);
-        }
-
-        .skill-category:nth-child(3) .skill-category-title {
-            background: #FF6B35;
-        }
-
-        .skill-category:nth-child(4) .skill-category-title {
-            background: #6A4C93;
-        }
-
-        .skill-category:nth-child(5) .skill-category-title {
-            background: #2A9D8F;
-        }
-
-        .skill-category:nth-child(6) .skill-category-title {
-            background: var(--black);
-        }
-
-        .skill-category:nth-child(7) .skill-category-title {
-            background: #0B7285;
-        }
-
-        .skill-item {
-            margin-bottom: 0.6rem;
-            font-size: 0.8rem;
-            color: var(--text);
-            padding: 0.4rem 0.8rem;
-            background: #F8F8F8;
-            border-left: 3px solid var(--accent-blue);
-            font-weight: 500;
-            line-height: 1.4;
-        }
-
-        .skill-category:nth-child(1) .skill-item {
-            border-left-color: var(--accent-red);
-        }
-
-        .skill-category:nth-child(3) .skill-item {
-            border-left-color: #FF6B35;
-        }
-
-        .skill-category:nth-child(4) .skill-item {
-            border-left-color: #6A4C93;
-        }
-
-        .skill-category:nth-child(5) .skill-item {
-            border-left-color: #2A9D8F;
-        }
-
-        .skill-category:nth-child(6) .skill-item {
-            border-left-color: var(--black);
-        }
-
-        .skill-category:nth-child(7) .skill-item {
-            border-left-color: #0B7285;
-        }
-
-        /* Projects Section */
-        .projects {
-            padding: 6rem 3rem;
+        .chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.45rem;
+            padding: 0.8rem 1.1rem;
             background: var(--white);
-            border-bottom: 1px solid var(--border);
+            align-items: center;
         }
 
+        .chip {
+            font-size: 0.78rem;
+            font-weight: 600;
+            padding: 0.3rem 0.7rem;
+            border: 1.5px solid var(--black);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.3;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .chip:hover {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .chip.prod {
+            background: var(--accent-blue);
+            border-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        .chip.prod:hover {
+            background: var(--black);
+            border-color: var(--black);
+        }
+
+        /* Projects */
         .filter-container {
             display: flex;
-            gap: 1rem;
-            margin-bottom: 3rem;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
             flex-wrap: wrap;
-            justify-content: center;
         }
 
         .filter-btn {
-            padding: 0.7rem 1.5rem;
+            padding: 0.55rem 1.1rem;
             border: 2px solid var(--black);
             background: var(--white);
             color: var(--black);
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            transition: all 0.3s;
+            transition: all 0.2s;
+            font-family: inherit;
         }
 
-        .filter-btn:hover {
-            background: var(--black);
-            color: var(--white);
-        }
-
+        .filter-btn:hover,
         .filter-btn.active {
             background: var(--black);
             color: var(--white);
@@ -371,28 +344,25 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.75rem;
         }
 
         .project-card {
             border: 2px solid var(--black);
             background: var(--white);
-            transition: all 0.3s;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
         }
 
-        .project-card.hidden {
-            display: none;
-        }
+        .project-card.hidden { display: none; }
 
         .project-card:hover {
-            transform: translate(-8px, -8px);
-            box-shadow: 8px 8px 0px var(--black);
+            transform: translate(-6px, -6px);
+            box-shadow: 6px 6px 0px var(--black);
         }
 
-        .project-card.featured {
-            border: 3px solid var(--accent-blue);
-            grid-column: span 1;
-        }
+        .project-card.featured { border: 3px solid var(--accent-blue); }
 
         .featured-tag {
             display: inline-block;
@@ -402,18 +372,19 @@
             font-weight: 800;
             letter-spacing: 1px;
             text-transform: uppercase;
-            padding: 0.3rem 0.7rem;
-            margin-bottom: 0.8rem;
+            padding: 0.25rem 0.6rem;
+            margin-bottom: 0.7rem;
         }
 
         .project-visual {
-            height: 200px;
+            height: 170px;
             background: #f5f5f5;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
             position: relative;
+            border-bottom: 2px solid var(--black);
         }
 
         .project-visual img {
@@ -423,66 +394,156 @@
             transition: transform 0.3s;
         }
 
-        .project-card:hover .project-visual img {
-            transform: scale(1.05);
+        .project-card:hover .project-visual img { transform: scale(1.05); }
+
+        /* Drawn tiles for projects without a screenshot yet */
+        .tile {
+            width: 100%;
+            height: 100%;
+            background: var(--black);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
         }
 
+        .tile-flow {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            flex-wrap: nowrap;
+        }
+
+        .tile-flow span.node {
+            border: 2px solid var(--white);
+            padding: 0.35rem 0.5rem;
+            font-size: 0.68rem;
+            font-weight: 700;
+        }
+
+        .tile-flow span.node.last { background: var(--accent-blue); border-color: var(--accent-blue); }
+
+        .tile-flow span.arrow { font-size: 0.8rem; color: var(--accent-blue); }
+
+        .tile-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .tile-grid span {
+            border: 2px solid var(--white);
+            padding: 0.55rem 0.4rem;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .tile-grid span:nth-child(1) { border-color: var(--accent-red); }
+        .tile-grid span:nth-child(4) { background: var(--accent-blue); border-color: var(--accent-blue); }
+
+        .tile-tamil { flex-direction: column; gap: 0.3rem; }
+
+        .tile-tamil .big {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            font-family: 'Noto Sans Tamil', 'Latha', 'Nirmala UI', 'Tamil Sangam MN', sans-serif;
+        }
+
+        .tile-tamil .small { font-size: 0.72rem; color: #cfcfcf; letter-spacing: 0.5px; }
+
+        .tile-chat {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 0.5rem;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        .tile-chat .bubble {
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.45rem 0.7rem;
+            border: 2px solid var(--white);
+            max-width: 85%;
+        }
+
+        .tile-chat .bubble.me { align-self: flex-end; background: var(--white); color: var(--black); }
+        .tile-chat .bubble.ai { align-self: flex-start; }
+        .tile-chat .bubble.tool { align-self: flex-start; border-color: var(--accent-blue); color: var(--accent-blue); }
+
         .project-content {
-            padding: 2rem;
+            padding: 1.4rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
 
         .project-title {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--black);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.6rem;
             letter-spacing: -0.5px;
+            line-height: 1.25;
         }
 
         .project-description {
-            font-size: 0.85rem;
+            font-size: 0.83rem;
             color: var(--text);
             line-height: 1.6;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .project-insight {
-            background: #F0F7FF;
+        details.project-insight {
             border-left: 3px solid var(--accent-blue);
-            padding: 0.7rem 0.9rem;
+            background: #F0F7FF;
+            margin-bottom: 1rem;
             font-size: 0.78rem;
             line-height: 1.5;
-            color: var(--text);
-            margin-bottom: 1.5rem;
         }
 
-        .project-insight strong {
-            color: var(--black);
+        details.project-insight summary {
+            cursor: pointer;
+            padding: 0.5rem 0.8rem;
+            font-weight: 700;
+            list-style: none;
         }
+
+        details.project-insight summary::-webkit-details-marker { display: none; }
+        details.project-insight summary::after { content: '+'; float: right; font-weight: 800; }
+        details.project-insight[open] summary::after { content: '–'; }
+        details.project-insight p { padding: 0 0.8rem 0.7rem 0.8rem; }
 
         .project-tech {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.4rem;
             flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.1rem;
         }
 
         .tech-badge {
             background: var(--black);
             color: var(--white);
-            padding: 0.3rem 0.7rem;
-            font-size: 0.7rem;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.68rem;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        .project-links { margin-top: auto; }
 
         .project-link {
             display: inline-block;
             color: var(--black);
             text-decoration: none;
             font-weight: 700;
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             border-bottom: 2px solid var(--black);
@@ -497,30 +558,23 @@
 
         .view-more-wrap {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 2.5rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        /* Achievements & Certifications Section */
-        .achievements {
-            padding: 6rem 3rem;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
-
+        /* Achievements */
         .achievements-carousel {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
-            min-height: 450px;
-            position: relative;
+            min-height: 420px;
         }
 
-        .certificate-image-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
+        .certificate-image-container { position: relative; width: 100%; }
 
         .certificate-card {
             display: none;
@@ -532,50 +586,22 @@
             animation: slideInLeft 0.6s ease-out;
         }
 
-        .certificate-card.active {
-            display: block;
-        }
-
-        .certificate-card img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .certificate-card.active { display: block; }
+        .certificate-card img { width: 100%; height: auto; display: block; }
 
         @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
-        .certificate-info-container {
-            position: relative;
-            padding: 2rem;
-        }
+        .certificate-info-container { position: relative; padding: 1rem 2rem; }
 
-        .certificate-info {
-            display: none;
-            animation: slideInRight 0.6s ease-out;
-        }
-
-        .certificate-info.active {
-            display: block;
-        }
+        .certificate-info { display: none; animation: slideInRight 0.6s ease-out; }
+        .certificate-info.active { display: block; }
 
         @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         .certificate-badge {
@@ -587,16 +613,16 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             border-radius: 4px;
         }
 
         .certificate-title {
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 900;
             color: var(--black);
             letter-spacing: -1px;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
             line-height: 1.2;
         }
 
@@ -604,7 +630,7 @@
             font-size: 0.9rem;
             color: var(--text);
             opacity: 0.7;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             font-weight: 600;
         }
 
@@ -612,18 +638,18 @@
             font-size: 0.95rem;
             color: var(--text);
             line-height: 1.7;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .certificate-skills {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .skill-tag {
-            background: #F8F8F8;
+            background: var(--soft);
             color: var(--text);
             padding: 0.5rem 1rem;
             font-size: 0.75rem;
@@ -632,16 +658,8 @@
             border-radius: 20px;
         }
 
-        .carousel-controls {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .carousel-nav {
-            display: flex;
-            gap: 0.8rem;
-        }
+        .carousel-controls { display: flex; gap: 1rem; align-items: center; }
+        .carousel-nav { display: flex; gap: 0.8rem; }
 
         .nav-btn {
             width: 45px;
@@ -658,22 +676,9 @@
             justify-content: center;
         }
 
-        .nav-btn:hover {
-            background: var(--black);
-            color: var(--white);
-        }
+        .nav-btn:hover { background: var(--black); color: var(--white); }
 
-        .nav-btn:disabled {
-            opacity: 0.3;
-            cursor: not-allowed;
-        }
-
-        .carousel-indicators {
-            display: flex;
-            gap: 0.5rem;
-            margin-left: 1rem;
-            flex-wrap: wrap;
-        }
+        .carousel-indicators { display: flex; gap: 0.5rem; margin-left: 1rem; flex-wrap: wrap; }
 
         .indicator {
             width: 8px;
@@ -684,119 +689,64 @@
             transition: all 0.3s;
         }
 
-        .indicator.active {
-            background: var(--black);
-            width: 24px;
-            border-radius: 4px;
+        .indicator.active { background: var(--black); width: 24px; border-radius: 4px; }
+
+        /* Journey: two columns */
+        .journey-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
         }
 
-        /* Timeline Section - Compact Version */
-        .timeline {
-            padding: 6rem 3rem;
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .timeline-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            margin-bottom: 1.75rem;
-            position: relative;
-            width: 100%;
-            padding-left: 3rem;
-        }
-
-        .timeline-box {
-            background: #F8F8F8;
-            border: 2px solid var(--black);
-            padding: 1.25rem 1.5rem;
-            position: relative;
-            width: 100%;
-            transition: all 0.3s;
-        }
-
-        .timeline-box:hover {
-            transform: translateY(-3px);
-            box-shadow: 6px 6px 0px var(--black);
-        }
-
-        .timeline-box::before {
-            content: '';
-            position: absolute;
-            left: -3.9rem;
-            top: 24px;
-            width: 15px;
-            height: 15px;
-            background: var(--accent-blue);
-            border-radius: 50%;
-            border: 3px solid var(--white);
-            box-shadow: 0 0 0 2px var(--black);
-            z-index: 1;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-box::before {
-            background: var(--accent-red);
-        }
-
-        .timeline-item:nth-child(even) .timeline-box::before {
-            background: var(--accent-blue);
-        }
-
-        .timeline-year {
-            display: inline-block;
-            background: var(--black);
-            color: var(--white);
-            padding: 0.35rem 0.9rem;
-            font-size: 0.72rem;
-            font-weight: 700;
+        .journey-heading {
+            font-size: 0.85rem;
+            font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 1px;
-            margin-bottom: 0.6rem;
+            background: var(--black);
+            color: var(--white);
+            display: inline-block;
+            padding: 0.45rem 1rem;
+            margin-bottom: 1.25rem;
         }
 
-        .timeline-box h3 {
+        .journey-col.exp .journey-heading { background: var(--accent-blue); }
+
+        .j-item {
+            border: 2px solid var(--black);
+            background: var(--soft);
+            padding: 1rem 1.25rem;
+            margin-bottom: 1rem;
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .j-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 5px 5px 0 var(--black);
+        }
+
+        .j-year {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: var(--accent-red);
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .j-item h3 {
             font-size: 0.95rem;
             font-weight: 800;
             color: var(--black);
-            margin-bottom: 0.4rem;
-            letter-spacing: -0.3px;
             line-height: 1.35;
+            margin-bottom: 0.35rem;
+            letter-spacing: -0.3px;
         }
 
-        .timeline-box p {
-            font-size: 0.82rem;
-            color: var(--text);
-            line-height: 1.55;
-            text-align: left;
-        }
+        .j-item p { font-size: 0.82rem; line-height: 1.55; }
 
-        @media (max-width: 768px) {
-            .timeline-item {
-                padding-left: 2rem;
-            }
-            
-            .timeline-box::before {
-                left: -2.9rem;
-            }
-        }
-
-        /* Contact Section */
+        /* Contact */
         .contact {
-            padding: 6rem 3rem;
+            padding: 5rem 3rem;
             background: var(--black);
             color: var(--white);
             text-align: center;
@@ -804,18 +754,15 @@
 
         .contact-text {
             font-size: 1.1rem;
-            margin-bottom: 3rem;
+            margin: 0 auto 2.5rem auto;
             max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 2rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-bottom: 2rem;
         }
 
         .contact-link {
@@ -830,14 +777,10 @@
             transition: all 0.3s;
         }
 
-        .contact-link:hover {
-            background: var(--white);
-            color: var(--black);
-        }
+        .contact-link:hover { background: var(--white); color: var(--black); }
 
-        /* Footer */
         footer {
-            padding: 2rem 3rem;
+            padding: 1.5rem 3rem;
             background: var(--white);
             border-top: 1px solid var(--border);
             text-align: center;
@@ -849,72 +792,30 @@
 
         /* Responsive */
         @media (max-width: 1024px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .stats-list {
-                margin-left: 0;
-            }
-
-            .skills-content {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .section-header {
-                flex-direction: column;
-            }
-
-            .achievements-carousel {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .certificate-image-container {
-                order: 2;
-            }
-
-            .certificate-info-container {
-                order: 1;
-            }
+            .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .stats-list { margin-left: 0; flex-direction: row; flex-wrap: wrap; gap: 1.5rem; }
+            .about-image { max-width: 320px; }
+            .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .achievements-carousel { grid-template-columns: 1fr; gap: 2rem; }
+            .certificate-image-container { order: 2; }
+            .certificate-info-container { order: 1; padding: 0; }
+            .journey-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-                gap: 1.5rem;
-                padding: 1rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .profile-header h1 {
-                font-size: 2rem;
-            }
-
-            .profile-header .subtitle {
-                font-size: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                gap: 1rem;
-            }
+            nav { flex-direction: column; gap: 0.8rem; padding: 0.8rem 1rem; }
+            nav ul { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+            html { scroll-padding-top: 8rem; }
+            .about { padding: 9rem 1.25rem 3rem 1.25rem; }
+            section.block, .contact { padding-left: 1.25rem; padding-right: 1.25rem; }
+            .profile-header h1 { font-size: 2.2rem; }
+            .profile-header .subtitle { font-size: 1rem; }
+            .section-title { font-size: 1.8rem; white-space: normal; }
+            .section-header { gap: 1rem; }
+            .skill-row { grid-template-columns: 1fr; }
+            .skill-row-label { padding: 0.6rem 1rem; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .certificate-title { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -939,17 +840,17 @@
                 <h1>Amirtha Ganesh R</h1>
                 <p class="subtitle">Data Scientist | ML Engineer | GenAI &amp; Agentic AI</p>
             </div>
-            
+
             <div class="about-grid">
                 <div class="about-text">
                     <p>I'm a data scientist and ML engineer with an M.Sc. in Data Science from VIT-AP and a B.Sc. (Honors) in Data Science &amp; Analytics from Sharda University, Delhi. My work spans the full ML lifecycle, from statistical modeling and deep learning to, most recently, building production LLM and agentic AI systems.</p>
                     <p>At HMH TechHub, I built an end-to-end LLM data pipeline and automated HR workflows using LangGraph and LangChain, backed by a RAG system on Qdrant and production agents built with Pydantic AI and Docker. Earlier roles at MBA Bazaar and White Elephant sharpened my grounding in predictive modeling and data quality engineering. My research on optimization-based intrusion detection was published at IEEE CICN 2025, and I'm Oracle-certified in both Data Science and Agentic AI Foundations.</p>
-                    
+
                     <div class="action-buttons">
                         <a href="#projects" class="btn">View Work</a>
-                        <a href="https://github.com/Data-pageup" target="_blank" class="btn btn-outline">GitHub</a>
-                        <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="btn btn-outline">LinkedIn</a>
-                        <a href="https://drive.google.com/file/d/1lCUln8ABxC3rwf-xlOJnGSewihszdeMC/view?usp=drivesdk" target="_blank" class="btn btn-outline">Résumé</a>
+                        <a href="https://github.com/Data-pageup" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+                        <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+                        <a href="https://drive.google.com/file/d/1lCUln8ABxC3rwf-xlOJnGSewihszdeMC/view?usp=drivesdk" target="_blank" rel="noopener" class="btn btn-outline">Résumé</a>
                     </div>
                 </div>
                 <div class="stats-list">
@@ -977,155 +878,339 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
+    <!-- Skills Section: compact matrix -->
+    <section class="block" id="skills">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Skills</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="skills-content">
-                <div class="skill-category">
-                    <div class="skill-category-title">LLM &amp; AI Agents</div>
-                    <div class="skill-item">BERT, BPE Tokenization &amp; Embeddings</div>
-                    <div class="skill-item">RAG (Vector Search with Qdrant)</div>
-                    <div class="skill-item">Agent Orchestration (LangChain, LangGraph)</div>
-                    <div class="skill-item">Production Agents (Pydantic AI, Docker)</div>
-                    <div class="skill-item">Workflow Automation (n8n)</div>
+
+            <div class="skill-legend">
+                <span class="chip prod">Blue</span>
+                <span>Used in production at HMH TechHub</span>
+            </div>
+
+            <div class="skill-matrix">
+                <div class="skill-row" style="--row-color: var(--accent-red)">
+                    <div class="skill-row-label">LLMs &amp; AI agents</div>
+                    <div class="chips">
+                        <span class="chip prod">LangGraph</span>
+                        <span class="chip prod">LangChain</span>
+                        <span class="chip prod">Pydantic AI</span>
+                        <span class="chip prod">RAG</span>
+                        <span class="chip prod">Qdrant</span>
+                        <span class="chip">ChromaDB</span>
+                        <span class="chip">n8n</span>
+                        <span class="chip">LangSmith</span>
+                        <span class="chip">BERT</span>
+                        <span class="chip">BPE tokenization</span>
+                        <span class="chip">Embeddings</span>
+                    </div>
                 </div>
 
-                <div class="skill-category">
-                    <div class="skill-category-title">Programming Languages</div>
-                    <div class="skill-item">Python (NumPy, Pandas, Scikit-learn)</div>
-                    <div class="skill-item">R (ggplot2, dplyr, tidyr)</div>
-                    <div class="skill-item">SQL (PostgreSQL, MySQL)</div>
-                    <div class="skill-item">MATLAB</div>
+                <div class="skill-row" style="--row-color: #FF6B35">
+                    <div class="skill-row-label">Languages</div>
+                    <div class="chips">
+                        <span class="chip">Python</span>
+                        <span class="chip">R</span>
+                        <span class="chip">SQL (PostgreSQL, MySQL)</span>
+                        <span class="chip">MATLAB</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Machine Learning</div>
-                    <div class="skill-item">Supervised (Linear/Logistic Regression, SVM)</div>
-                    <div class="skill-item">Ensemble (XGBoost, Random Forest, AdaBoost)</div>
-                    <div class="skill-item">Unsupervised (K-Means, DBSCAN, Hierarchical)</div>
-                    <div class="skill-item">Dimensionality Reduction (PCA, t-SNE, LDA)</div>
+
+                <div class="skill-row" style="--row-color: var(--accent-blue)">
+                    <div class="skill-row-label">Machine learning</div>
+                    <div class="chips">
+                        <span class="chip">Linear &amp; logistic regression</span>
+                        <span class="chip">SVM</span>
+                        <span class="chip">XGBoost</span>
+                        <span class="chip">Random Forest</span>
+                        <span class="chip">AdaBoost</span>
+                        <span class="chip">K-Means</span>
+                        <span class="chip">DBSCAN</span>
+                        <span class="chip">Hierarchical clustering</span>
+                        <span class="chip">PCA</span>
+                        <span class="chip">t-SNE</span>
+                        <span class="chip">LDA</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Deep Learning</div>
-                    <div class="skill-item">Frameworks (TensorFlow, Keras, PyTorch)</div>
-                    <div class="skill-item">CNNs (ResNet, VGG, MobileNet)</div>
-                    <div class="skill-item">RNNs (LSTM, GRU, Bidirectional)</div>
-                    <div class="skill-item">GANs (DCGAN, CTGAN, Conditional GAN)</div>
-                    <div class="skill-item">Transfer Learning &amp; Fine-tuning</div>
+
+                <div class="skill-row" style="--row-color: #6A4C93">
+                    <div class="skill-row-label">Deep learning</div>
+                    <div class="chips">
+                        <span class="chip">PyTorch</span>
+                        <span class="chip">TensorFlow</span>
+                        <span class="chip">Keras</span>
+                        <span class="chip">CNNs (ResNet, VGG, MobileNet)</span>
+                        <span class="chip">LSTM / GRU</span>
+                        <span class="chip">GANs (DCGAN, CTGAN)</span>
+                        <span class="chip">Transfer learning</span>
+                        <span class="chip">Fine-tuning</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Data Analysis &amp; Visualization</div>
-                    <div class="skill-item">Data Wrangling (Pandas, NumPy)</div>
-                    <div class="skill-item">Statistical Analysis (Hypothesis Testing)</div>
-                    <div class="skill-item">Visualization (Matplotlib, Seaborn, Plotly)</div>
-                    <div class="skill-item">BI Tools (Tableau, Power BI)</div>
-                    <div class="skill-item">EDA &amp; Feature Engineering</div>
+
+                <div class="skill-row" style="--row-color: #2A9D8F">
+                    <div class="skill-row-label">Data &amp; visualization</div>
+                    <div class="chips">
+                        <span class="chip">Pandas</span>
+                        <span class="chip">NumPy</span>
+                        <span class="chip">Scikit-learn</span>
+                        <span class="chip">Matplotlib</span>
+                        <span class="chip">Seaborn</span>
+                        <span class="chip">Plotly</span>
+                        <span class="chip">Tableau</span>
+                        <span class="chip">Power BI</span>
+                        <span class="chip">Hypothesis testing</span>
+                        <span class="chip">EDA &amp; feature engineering</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">MLOps &amp; Deployment</div>
-                    <div class="skill-item">Model Deployment (Flask, Streamlit)</div>
-                    <div class="skill-item">Containerization (Docker)</div>
-                    <div class="skill-item">Version Control (Git, GitHub)</div>
-                    <div class="skill-item">Experiment Tracking (MLflow, Weights &amp; Biases)</div>
-                    <div class="skill-item">Cloud Platforms (Oracle OCI, AWS)</div>
+
+                <div class="skill-row" style="--row-color: #0B7285">
+                    <div class="skill-row-label">MLOps &amp; deployment</div>
+                    <div class="chips">
+                        <span class="chip prod">Docker</span>
+                        <span class="chip">FastAPI</span>
+                        <span class="chip">Flask</span>
+                        <span class="chip">Streamlit</span>
+                        <span class="chip">Git &amp; GitHub</span>
+                        <span class="chip">MLflow</span>
+                        <span class="chip">Weights &amp; Biases</span>
+                        <span class="chip">Oracle OCI</span>
+                        <span class="chip">AWS</span>
+                        <span class="chip">Render</span>
+                    </div>
                 </div>
-                
-                <div class="skill-category">
-                    <div class="skill-category-title">Specialized Skills</div>
-                    <div class="skill-item">NLP (Text Classification, Sentiment Analysis)</div>
-                    <div class="skill-item">Computer Vision (Object Detection, Classification)</div>
-                    <div class="skill-item">Time Series Analysis (ARIMA, Prophet)</div>
-                    <div class="skill-item">Big Data (Hadoop)</div>
-                    <div class="skill-item">Model Optimization &amp; Hyperparameter Tuning</div>
+
+                <div class="skill-row" style="--row-color: var(--black)">
+                    <div class="skill-row-label">Specialties</div>
+                    <div class="chips">
+                        <span class="chip">NLP &amp; sentiment analysis</span>
+                        <span class="chip">Computer vision (YOLOv8)</span>
+                        <span class="chip">Anomaly detection</span>
+                        <span class="chip">Time series (ARIMA, Prophet)</span>
+                        <span class="chip">Hadoop</span>
+                        <span class="chip">Hyperparameter tuning</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section class="projects" id="projects">
+    <section class="block" id="projects">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Projects</h2>
                 <div class="section-line"></div>
             </div>
-            
-            <!-- Filter Buttons -->
+
             <div class="filter-container">
-                <button class="filter-btn active" onclick="filterProjects('all')">ALL</button>
-                <button class="filter-btn" onclick="filterProjects('genai')">GENAI / AGENTIC</button>
-                <button class="filter-btn" onclick="filterProjects('deep-learning')">DEEP LEARNING</button>
-                <button class="filter-btn" onclick="filterProjects('machine-learning')">MACHINE LEARNING</button>
-                <button class="filter-btn" onclick="filterProjects('computer-vision')">COMPUTER VISION</button>
-                <button class="filter-btn" onclick="filterProjects('nlp')">NLP</button>
-                <button class="filter-btn" onclick="filterProjects('data-analysis')">DATA ANALYSIS</button>
+                <button class="filter-btn active" data-filter="all" onclick="filterProjects('all', this)">All</button>
+                <button class="filter-btn" data-filter="genai" onclick="filterProjects('genai', this)">GenAI / LLM</button>
+                <button class="filter-btn" data-filter="deep-learning" onclick="filterProjects('deep-learning', this)">Deep learning</button>
+                <button class="filter-btn" data-filter="machine-learning" onclick="filterProjects('machine-learning', this)">Machine learning</button>
+                <button class="filter-btn" data-filter="computer-vision" onclick="filterProjects('computer-vision', this)">Computer vision</button>
+                <button class="filter-btn" data-filter="nlp" onclick="filterProjects('nlp', this)">NLP</button>
+                <button class="filter-btn" data-filter="data-analysis" onclick="filterProjects('data-analysis', this)">Data analysis</button>
             </div>
 
-            <div class="projects-grid">
-                <!-- Project: Multi-Model PDF Assistant (FEATURED - GenAI, RAG) -->
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- NEW 1: GoAnywhere AI -->
                 <div class="project-card featured" data-category="genai">
+                    <div class="project-visual">
+                        <div class="tile">
+                            <div class="tile-flow">
+                                <span class="node">Flight</span><span class="arrow">▸</span>
+                                <span class="node">Hotel</span><span class="arrow">▸</span>
+                                <span class="node">Itinerary</span><span class="arrow">▸</span>
+                                <span class="node last">Final</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-tag" style="align-self: flex-start;">Live · Multi-agent</span>
+                        <div class="project-title">GoAnywhere AI</div>
+                        <p class="project-description">A multi-agent travel planner built on LangGraph. Flight, Hotel, Itinerary and Final Response agents share state to turn one natural-language request into flights, hotels, a day-by-day plan and a budget. An input guardrail blocks non-travel requests before any API or LLM call.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Running the guardrail before any agent means off-topic requests never trigger paid tool or LLM calls, and PostgreSQL checkpointing keeps each trip's state across sessions.</p>
+                        </details>
+                        <div class="project-tech">
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">FastAPI</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">LangSmith</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/goanywhere-ai-langgraph" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://goanywhere-ai.onrender.com/" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW 3: Tamil LLM -->
+                <div class="project-card featured" data-category="genai nlp deep-learning">
+                    <div class="project-visual">
+                        <div class="tile tile-tamil">
+                            <div class="big">தமிழ்</div>
+                            <div class="small">23M parameters · 32K BPE vocabulary</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-tag" style="align-self: flex-start;">Built from scratch</span>
+                        <div class="project-title">Tamil LLM (23M Parameters)</div>
+                        <p class="project-description">A Tamil language model built end to end in PyTorch: a custom 32K BPE tokenizer, a decoder-only Transformer (6 layers, 384 hidden, 6 heads), pretraining on about 58M tokens from 100K documents, and a small SFT run. Weights and tokenizer are on Hugging Face.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Experimental, and documented honestly: best pretraining validation loss was about 5.13, but generations are still repetitive. The next step is a larger corpus and 20+ epochs of pretraining.</p>
+                        </details>
+                        <div class="project-tech">
+                            <span class="tech-badge">PyTorch</span>
+                            <span class="tech-badge">Transformer</span>
+                            <span class="tech-badge">BPE</span>
+                            <span class="tech-badge">Hugging Face</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://huggingface.co/data-pageup/tamil-llm-23m" class="project-link" target="_blank" rel="noopener">Hugging Face</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Model PDF Assistant -->
+                <div class="project-card" data-category="genai">
                     <div class="project-visual">
                         <img src="project_images/Multi_model_pdf_assistant.png" alt="Multi-Model PDF Assistant" style="object-fit: contain; object-position: center; padding: 0.75rem;">
                     </div>
                     <div class="project-content">
-                        <span class="featured-tag">RAG · Multi-LLM</span>
+                        <span class="featured-tag" style="align-self: flex-start;">RAG · Multi-LLM</span>
                         <div class="project-title">Multi-Model PDF Assistant</div>
-                        <p class="project-description">Upload one or more PDFs, choose your preferred LLM provider, and chat with your documents using a Retrieval-Augmented Generation pipeline. Documents are chunked and embedded locally, then retrieved against a Chroma vector store before being passed through Groq or Google Gemini.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Letting users switch between Groq and Gemini per session — with API keys never stored — made it a genuinely reusable tool rather than a single-provider demo.</div>
+                        <p class="project-description">Upload one or more PDFs, choose your LLM provider, and chat with your documents through a RAG pipeline. Documents are chunked and embedded locally, retrieved from a Chroma vector store, then answered by Groq or Google Gemini.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Letting users switch between Groq and Gemini per session, with API keys never stored, made it a reusable tool rather than a single-provider demo.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">RAG</span>
                             <span class="tech-badge">LangChain</span>
                             <span class="tech-badge">ChromaDB</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/Multi_Model_Assistant" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://multi-docs.streamlit.app" class="project-link" target="_blank">Live Demo</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Multi_Model_Assistant" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://multi-docs.streamlit.app" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project: Multi-Agent Research System -->
+                <!-- NEW 4: AG's GPT -->
+                <div class="project-card" data-category="genai">
+                    <div class="project-visual">
+                        <div class="tile tile-chat">
+                            <div class="bubble me">Summarize this PDF</div>
+                            <div class="bubble tool">🔧 retrieving chunks…</div>
+                            <div class="bubble ai">Here are the key findings…</div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">AG's GPT</div>
+                        <p class="project-description">An agentic chatbot on a LangGraph tool-calling loop. It can search the web with Tavily, answer questions from uploaded documents using RAG on ChromaDB, remember past conversations, and stream replies through a custom black-and-white UI. Gemini is the LLM, served via FastAPI.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>The agent decides per message whether it needs web search, document retrieval, or no tool at all, using LangGraph's tools_condition and ToolNode instead of always calling the LLM directly.</p>
+                        </details>
+                        <div class="project-tech">
+                            <span class="tech-badge">LangGraph</span>
+                            <span class="tech-badge">ChromaDB</span>
+                            <span class="tech-badge">Gemini</span>
+                            <span class="tech-badge">FastAPI</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- TODO: replace with the exact repo URL for AG's GPT -->
+                            <a href="https://github.com/Data-pageup" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Multi-Agent Research System -->
                 <div class="project-card" data-category="genai">
                     <div class="project-visual">
                         <img src="project_images/Multi_agent_research_system.png" alt="Multi-Agent Research System" style="object-fit: contain; object-position: center; padding: 0.75rem;">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Multi-Agent Research System</div>
-                        <p class="project-description">A local multi-agent research system built with LangChain that automates a structured research workflow — a Search Agent and Reader Agent gather and scrape sources, a Writer Chain drafts the report, and a Critic Chain reviews it before it's finalized.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Adding a dedicated Critic Chain instead of accepting the Writer's first draft caught weak or unsupported claims that a single-pass LLM report would have shipped as-is.</div>
+                        <p class="project-description">A local multi-agent research system built with LangChain. A Search Agent and Reader Agent gather and scrape sources, a Writer Chain drafts the report, and a Critic Chain reviews it before it's finalized.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>A dedicated Critic Chain caught weak or unsupported claims that a single-pass LLM report would have shipped as-is.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">LangChain</span>
                             <span class="tech-badge">Multi-Agent</span>
                             <span class="tech-badge">Web Scraping</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/multi_agent_system" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/multi_agent_system" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project: FIFA World Cup 2026 Prediction -->
-                <div class="project-card" data-category="data-analysis">
+                <!-- NEW 2: AI Automation n8n -->
+                <div class="project-card" data-category="genai">
+                    <div class="project-visual">
+                        <div class="tile">
+                            <div class="tile-grid">
+                                <span>Research War Room</span>
+                                <span>Job Hunter</span>
+                                <span>Company Intel</span>
+                                <span>AI Crawler</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-title">AI Automation with n8n</div>
+                        <p class="project-description">Four autonomous n8n workflows: a multi-agent research war room, a job-fit and resume matcher, a company intelligence agent, and a crawler that turns web pages into structured data.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Each workflow gives agents a job that ends in a decision or structured output. The resume matcher, for example, returns APPLY, CONSIDER or SKIP instead of just text.</p>
+                        </details>
+                        <div class="project-tech">
+                            <span class="tech-badge">n8n</span>
+                            <span class="tech-badge">AI Agents</span>
+                            <span class="tech-badge">OpenAI</span>
+                            <span class="tech-badge">Tavily</span>
+                        </div>
+                        <div class="project-links">
+                            <!-- TODO: replace with the exact repo URL (AI-Automation-Lab) -->
+                            <a href="https://github.com/Data-pageup" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FIFA World Cup 2026 Prediction -->
+                <div class="project-card" data-category="data-analysis machine-learning">
                     <div class="project-visual">
                         <img src="project_images/FIFA_2026_worldcup.png" alt="FIFA 2026 World Cup Outcome Prediction">
                     </div>
                     <div class="project-content">
                         <div class="project-title">FIFA 2026 World Cup Outcome Prediction</div>
-                        <p class="project-description">A data-driven prediction system using Poisson Regression and Monte Carlo Simulation. Two Poisson models predict home and away team goals from historical match data, powering a match-level simulator that runs the full 48-team tournament 1,000 times to produce stage-by-stage qualification probabilities for every nation.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Running 1,000 full-tournament simulations turns match-level goal predictions into stage-by-stage qualification odds — a far more honest answer than a single bracket guess for a 48-team format.</div>
+                        <p class="project-description">Two Poisson regression models predict home and away goals from historical matches, powering a simulator that runs the full 48-team tournament 1,000 times to give stage-by-stage qualification probabilities for every nation.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>1,000 full-tournament simulations turn match-level goal predictions into qualification odds, a more honest answer than a single bracket guess for a 48-team format.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">Poisson Regression</span>
                             <span class="tech-badge">Monte Carlo</span>
                             <span class="tech-badge">Python</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/FIFA-2026-Outcome-Prediction-Using-Poisson-Regression-and-Monte-Carlo-Simulation" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/FIFA-2026-Outcome-Prediction-Using-Poisson-Regression-and-Monte-Carlo-Simulation" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 1: Hybrid GAN Data Synthesizer -->
+                <!-- Hybrid GAN Data Synthesizer -->
                 <div class="project-card" data-category="deep-learning">
                     <div class="project-visual">
                         <img src="project_images/hybrid-GAN.jfif" alt="Hybrid GAN Data Synthesizer">
@@ -1133,17 +1218,22 @@
                     <div class="project-content">
                         <div class="project-title">Hybrid GAN Data Synthesizer</div>
                         <p class="project-description">Dual-engine synthetic tabular data generator using Gaussian Copula and CTGAN with automated preprocessing and comprehensive evaluation metrics.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Synthetic data matched real distribution statistics closely enough to drop into existing pipelines without retraining downstream models.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Synthetic data matched real distribution statistics closely enough to drop into existing pipelines without retraining downstream models.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">GANs</span>
                             <span class="tech-badge">Streamlit</span>
                             <span class="tech-badge">Python</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/Hybrid_Generative_Adversarial_Neural_Network_and_Copula_DataSynthesizer" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Hybrid_Generative_Adversarial_Neural_Network_and_Copula_DataSynthesizer" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 2: SmartFit AI -->
+                <!-- SmartFit AI -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
                         <img src="project_images/smartfit.jfif" alt="SmartFit AI">
@@ -1151,73 +1241,93 @@
                     <div class="project-content">
                         <div class="project-title">SmartFit AI</div>
                         <p class="project-description">ML-powered fitness platform analyzing 20K+ records using PCA, K-Means clustering, and neural networks for personalized insights.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Clustering uncovered 4 distinct fitness personas in the data, enabling recommendations a generic dashboard would have missed.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Clustering uncovered 4 distinct fitness personas in the data, enabling recommendations a generic dashboard would have missed.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">Neural Networks</span>
                             <span class="tech-badge">K-Means</span>
                             <span class="tech-badge">Streamlit</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/SmartFit_AI" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://smartfit-ai.streamlit.app/" class="project-link" target="_blank">Live Demo</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/SmartFit_AI" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://smartfit-ai.streamlit.app/" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 3: RippleWorks -->
-                <div class="project-card" data-category="data-analysis">
+                <!-- RippleWorks -->
+                <div class="project-card" data-category="data-analysis machine-learning">
                     <div class="project-visual">
                         <img src="project_images/Rippleworks.jfif" alt="RippleWorks">
                     </div>
                     <div class="project-content">
                         <div class="project-title">RippleWorks</div>
-                        <p class="project-description">Water quality intelligence system with dual XGBoost models for WQI regression and classification deployed as interactive web app.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Pairing a regression score with a separate safety classifier caught borderline-unsafe samples a single model alone would have scored as fine.</div>
+                        <p class="project-description">Water quality intelligence system with dual XGBoost models for WQI regression and classification, deployed as an interactive web app.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Pairing a regression score with a separate safety classifier caught borderline-unsafe samples a single model alone would have scored as fine.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">XGBoost</span>
                             <span class="tech-badge">KNN</span>
                             <span class="tech-badge">Streamlit</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/RippleWorks" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/RippleWorks" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 4: Sequential Neural Networks Sentiment Analysis -->
-                <div class="project-card" data-category="nlp">
+                <!-- Sentiment Analysis RNN -->
+                <div class="project-card" data-category="nlp deep-learning">
                     <div class="project-visual">
                         <img src="project_images/Sentiment Analysis RNN.jfif" alt="Sentiment Analysis RNN">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Sentiment Analysis RNN</div>
                         <p class="project-description">Sequential neural networks (RNN, LSTM, GRU) for text classification with real-time prediction on news articles and reviews.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Gated architectures (LSTM/GRU) held onto context in longer reviews far better than vanilla RNNs, where early signal kept fading out.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Gated architectures (LSTM/GRU) held onto context in longer reviews far better than vanilla RNNs, where early signal kept fading out.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">LSTM</span>
                             <span class="tech-badge">GRU</span>
                             <span class="tech-badge">NLP</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/Sequential-Neural-Networks-for-Sentiment-Analysis-model-deploy" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://sequentialneuralnetworks-sentimentanalysis.streamlit.app/" class="project-link" target="_blank">Live Demo</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Sequential-Neural-Networks-for-Sentiment-Analysis-model-deploy" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://sequentialneuralnetworks-sentimentanalysis.streamlit.app/" class="project-link" target="_blank" rel="noopener">Live Demo</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 5: Drone Livestock Detection -->
-                <div class="project-card" data-category="computer-vision">
+                <!-- Drone Livestock Detection -->
+                <div class="project-card" data-category="computer-vision deep-learning">
                     <div class="project-visual">
                         <img src="project_images/Drone Livestock Detection.png" alt="Drone Livestock Detection">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Drone Livestock Detection</div>
                         <p class="project-description">YOLOv8-based livestock detection system for identifying and counting sheep in aerial imagery. mAP50: 0.782, Precision: 0.793.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> 0.782 mAP50 held up on real aerial footage, not just curated benchmark images, which is where most detection models quietly fall apart.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>0.782 mAP50 held up on real aerial footage, not just curated benchmark images, which is where most detection models quietly fall apart.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">YOLOv8</span>
                             <span class="tech-badge">Computer Vision</span>
                             <span class="tech-badge">UAV</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/drone-livestock-detection" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/drone-livestock-detection" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 6: Aircraft Engine Anomaly Detection -->
+                <!-- Aircraft Engine Anomaly Detection -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
                         <img src="project_images/Aircraft Engine Anomaly Detection.png" alt="Aircraft Engine Anomaly Detection">
@@ -1225,35 +1335,45 @@
                     <div class="project-content">
                         <div class="project-title">Aircraft Engine Anomaly Detection</div>
                         <p class="project-description">Identifying engines operating at abnormally high turbine gas temperatures using Isolation Forest and unsupervised machine learning.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Isolation Forest flagged abnormal turbine temperatures earlier than a fixed-threshold alert would have, catching drift before it became failure.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Isolation Forest flagged abnormal turbine temperatures earlier than a fixed-threshold alert would have, catching drift before it became failure.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">Isolation Forest</span>
                             <span class="tech-badge">Anomaly Detection</span>
                             <span class="tech-badge">PCA</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/aircraft-engine-anomaly-detectionn" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/aircraft-engine-anomaly-detectionn" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 7: Trader Behavior vs Market Sentiment -->
+                <!-- Trader Behavior vs Market Sentiment -->
                 <div class="project-card" data-category="data-analysis">
                     <div class="project-visual">
                         <img src="project_images/Trader Behavior vs Market Sentiment.jpg" alt="Trader Behavior vs Market Sentiment">
                     </div>
                     <div class="project-content">
                         <div class="project-title">Trader Behavior vs Market Sentiment</div>
-                        <p class="project-description">Analyzing relationship between trader profitability and Bitcoin Fear &amp; Greed Index using 211K+ trades. Fear periods yield 2.5× higher PnL.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Fear periods produced 2.5× higher PnL than greed periods, a contrarian signal buried inside 211K+ trades most traders never look for.</div>
+                        <p class="project-description">Analyzing the relationship between trader profitability and the Bitcoin Fear &amp; Greed Index using 211K+ trades. Fear periods yield 2.5× higher PnL.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Fear periods produced 2.5× higher PnL than greed periods, a contrarian signal buried inside 211K+ trades most traders never look for.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">Statistical Analysis</span>
                             <span class="tech-badge">Trading Analytics</span>
                             <span class="tech-badge">Behavioral Finance</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/Trader-Behavior-vs-Market-Sentiment" class="project-link" target="_blank">GitHub</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Trader-Behavior-vs-Market-Sentiment" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Project 8: Diabetes Readmission Prediction -->
+                <!-- Diabetes Readmission Prediction -->
                 <div class="project-card" data-category="machine-learning">
                     <div class="project-visual">
                         <img src="project_images/Diabetes Readmission Prediction.jfif" alt="Diabetes Readmission Prediction">
@@ -1261,60 +1381,58 @@
                     <div class="project-content">
                         <div class="project-title">Diabetes Readmission Prediction</div>
                         <p class="project-description">Predicting hospital readmission using ensemble learning on 101,766 patient records. Gradient Boosting achieves 69.82% accuracy.</p>
-                        <div class="project-insight">💡 <strong>Insight:</strong> Gradient Boosting hit 69.82% accuracy across 100K+ patient records, enough to meaningfully flag high-risk readmissions before discharge.</div>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Gradient Boosting hit 69.82% accuracy across 100K+ patient records, enough to meaningfully flag high-risk readmissions before discharge.</p>
+                        </details>
                         <div class="project-tech">
                             <span class="tech-badge">Gradient Boosting</span>
                             <span class="tech-badge">Healthcare</span>
                             <span class="tech-badge">Classification</span>
                         </div>
-                        <a href="https://github.com/Data-pageup/Diabetic-Readmission" class="project-link" target="_blank">GitHub</a>
-                        <a href="https://diabetes-readmission.streamlit.app/" class="project-link" target="_blank">Dashboard</a>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Diabetic-Readmission" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                            <a href="https://diabetes-readmission.streamlit.app/" class="project-link" target="_blank" rel="noopener">Dashboard</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="view-more-wrap">
-                <a href="https://github.com/Data-pageup" target="_blank" class="btn btn-outline">See 9 more projects on GitHub →</a>
+            <div class="view-more-wrap" id="viewMoreWrap">
+                <button class="btn" id="toggleBtn" onclick="toggleExpand()">Show all projects</button>
+                <a href="https://github.com/Data-pageup" target="_blank" rel="noopener" class="btn btn-outline">More on GitHub →</a>
             </div>
         </div>
     </section>
-    
+
     <!-- Achievements & Certifications Section -->
-    <section class="achievements" id="achievements">
+    <section class="block" id="achievements">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Achievements &amp; Certifications</h2>
                 <div class="section-line"></div>
             </div>
-            
+
             <div class="achievements-carousel">
-                <!-- Certificate Images -->
                 <div class="certificate-image-container">
-                    <!-- Certificate 0: IEEE Publication -->
                     <div class="certificate-card active" data-cert="0">
                         <img src="certificate/IEEE-certificate.png" alt="IEEE CICN 2025 Publication Certificate">
                     </div>
-                    <!-- Certificate 1: Oracle Cloud Data Science -->
                     <div class="certificate-card" data-cert="1">
                         <img src="certificate/Oracle Cloud-Data Science.png" alt="Oracle Cloud Data Science Professional">
                     </div>
-                    <!-- Certificate 2: Agentic AI Certified Foundations Associate (NEW - placeholder, awaiting image) -->
                     <div class="certificate-card" data-cert="2">
                         <img src="certificate/Agentic AI Certified Foundations Associate.png" alt="Agentic AI Certified Foundations Associate">
                     </div>
-                    <!-- Certificate 3: HP LIFE Data Science & Analytics -->
                     <div class="certificate-card" data-cert="3">
                         <img src="certificate/Hp-life- Data Science&Analytics.png" alt="HP LIFE Data Science & Analytics">
                     </div>
-                    <!-- Certificate 4: University of Washington Machine Learning -->
                     <div class="certificate-card" data-cert="4">
                         <img src="certificate/University OF washiton-Machine Learning Foundations.png" alt="University of Washington Machine Learning Foundations">
                     </div>
                 </div>
 
-                <!-- Certificate Information -->
                 <div class="certificate-info-container">
-                    <!-- Cert 0: IEEE Publication -->
                     <div class="certificate-info active" data-cert="0">
                         <span class="certificate-badge">Research Publication</span>
                         <h3 class="certificate-title">IEEE CICN 2025 Conference Publication</h3>
@@ -1331,8 +1449,8 @@
                         </div>
                         <div class="carousel-controls">
                             <div class="carousel-nav">
-                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
-                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                                <button class="nav-btn" aria-label="Previous certificate" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" aria-label="Next certificate" onclick="changeSlide(1)">→</button>
                             </div>
                             <div class="carousel-indicators">
                                 <span class="indicator active" onclick="goToSlide(0)"></span>
@@ -1344,7 +1462,6 @@
                         </div>
                     </div>
 
-                    <!-- Cert 1: Oracle Cloud -->
                     <div class="certificate-info" data-cert="1">
                         <span class="certificate-badge">Cloud Certification</span>
                         <h3 class="certificate-title">Oracle Cloud Infrastructure 2025 Certified Data Science Professional</h3>
@@ -1360,8 +1477,8 @@
                         </div>
                         <div class="carousel-controls">
                             <div class="carousel-nav">
-                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
-                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                                <button class="nav-btn" aria-label="Previous certificate" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" aria-label="Next certificate" onclick="changeSlide(1)">→</button>
                             </div>
                             <div class="carousel-indicators">
                                 <span class="indicator" onclick="goToSlide(0)"></span>
@@ -1373,7 +1490,6 @@
                         </div>
                     </div>
 
-                    <!-- Cert 2: Agentic AI Certified Foundations Associate -->
                     <div class="certificate-info" data-cert="2">
                         <span class="certificate-badge">Agentic AI</span>
                         <h3 class="certificate-title">Agentic AI Certified Foundations Associate</h3>
@@ -1388,8 +1504,8 @@
                         </div>
                         <div class="carousel-controls">
                             <div class="carousel-nav">
-                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
-                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                                <button class="nav-btn" aria-label="Previous certificate" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" aria-label="Next certificate" onclick="changeSlide(1)">→</button>
                             </div>
                             <div class="carousel-indicators">
                                 <span class="indicator" onclick="goToSlide(0)"></span>
@@ -1401,7 +1517,6 @@
                         </div>
                     </div>
 
-                    <!-- Cert 3: HP LIFE Data Science & Analytics -->
                     <div class="certificate-info" data-cert="3">
                         <span class="certificate-badge">Professional Development</span>
                         <h3 class="certificate-title">HP LIFE: Data Science &amp; Analytics</h3>
@@ -1415,8 +1530,8 @@
                         </div>
                         <div class="carousel-controls">
                             <div class="carousel-nav">
-                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
-                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                                <button class="nav-btn" aria-label="Previous certificate" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" aria-label="Next certificate" onclick="changeSlide(1)">→</button>
                             </div>
                             <div class="carousel-indicators">
                                 <span class="indicator" onclick="goToSlide(0)"></span>
@@ -1428,7 +1543,6 @@
                         </div>
                     </div>
 
-                    <!-- Cert 4: University of Washington ML -->
                     <div class="certificate-info" data-cert="4">
                         <span class="certificate-badge">Academic Course</span>
                         <h3 class="certificate-title">Machine Learning Foundations: A Case Study Approach</h3>
@@ -1444,8 +1558,8 @@
                         </div>
                         <div class="carousel-controls">
                             <div class="carousel-nav">
-                                <button class="nav-btn" onclick="changeSlide(-1)">←</button>
-                                <button class="nav-btn" onclick="changeSlide(1)">→</button>
+                                <button class="nav-btn" aria-label="Previous certificate" onclick="changeSlide(-1)">←</button>
+                                <button class="nav-btn" aria-label="Next certificate" onclick="changeSlide(1)">→</button>
                             </div>
                             <div class="carousel-indicators">
                                 <span class="indicator" onclick="goToSlide(0)"></span>
@@ -1461,92 +1575,87 @@
         </div>
     </section>
 
-    <!-- Timeline Section (Journey) - Compact -->
-    <section class="timeline" id="timeline">
+    <!-- Journey: two columns -->
+    <section class="block" id="timeline">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Journey</h2>
                 <div class="section-line"></div>
             </div>
-            <div class="timeline-content">
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">2020-2023</div>
+
+            <div class="journey-grid">
+                <div class="journey-col">
+                    <div class="journey-heading">Education &amp; research</div>
+
+                    <div class="j-item">
+                        <div class="j-year">2024–2026</div>
+                        <h3>M.Sc Data Science – VIT, Andhra Pradesh</h3>
+                        <p>Completed M.Sc. in Data Science, specializing in statistical modeling, deep learning, and production ML/AI systems.</p>
+                    </div>
+
+                    <div class="j-item">
+                        <div class="j-year">2025–2026</div>
+                        <h3>IEEE publication &amp; certifications</h3>
+                        <p>Published "Dimensionality Reduction for Intrusion Detection Using Crow Search &amp; Grey Wolf Optimization" at IEEE CICN 2025, NIT Goa. Earned Oracle Cloud Infrastructure Data Science Professional (2025) and Agentic AI Certified Foundations Associate (2026).</p>
+                    </div>
+
+                    <div class="j-item">
+                        <div class="j-year">2020–2023</div>
                         <h3>B.Sc Data Science &amp; Analytics – Sharda University, Delhi</h3>
                         <p>Graduated with Honors. Competed in 3 hackathons and founded an early-stage data-driven startup venture.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">Jun–Aug 2022</div>
-                        <h3>Data Analyst Intern – White Elephant</h3>
-                        <p>Analyzed 100K+ records, improving data quality by 85% and model accuracy by 12% via PCA/t-SNE-based feature reduction.</p>
-                    </div>
-                </div>
+                <div class="journey-col exp">
+                    <div class="journey-heading">Experience</div>
 
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">2024-2026</div>
-                        <h3>M.Sc Data Science – VIT, Andhra Pradesh (Completed)</h3>
-                        <p>Completed M.Sc. in Data Science, specializing in statistical modeling, deep learning, and production ML/AI systems.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">Jun–Aug 2025</div>
-                        <h3>Data Science Intern – MBA Bazaar</h3>
-                        <p>Improved course completion rates by 18% via drop-off analysis across 15K+ records, built a collaborative-filtering recommender that lifted click-through rate by 22%, and hit 84% accuracy forecasting trial-to-paid conversion.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">Jan–May 2026</div>
+                    <div class="j-item">
+                        <div class="j-year">Jan–May 2026</div>
                         <h3>Data Science Intern – HMH TechHub</h3>
                         <p>Built a production LLM data pipeline and RAG system (Qdrant), automated end-to-end HR hiring with LangGraph, and engineered type-safe AI agents with Pydantic AI and Docker.</p>
                     </div>
-                </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-box">
-                        <div class="timeline-year">2025-2026</div>
-                        <h3>IEEE Publication &amp; Certifications</h3>
-                        <p>Published "Dimensionality Reduction for Intrusion Detection Using Crow Search &amp; Grey Wolf Optimization" at IEEE CICN 2025, NIT Goa. Earned Oracle Cloud Infrastructure Data Science Professional (2025) and Agentic AI Certified Foundations Associate (2026) certifications.</p>
+                    <div class="j-item">
+                        <div class="j-year">Jun–Aug 2025</div>
+                        <h3>Data Science Intern – MBA Bazaar</h3>
+                        <p>Improved course completion rates by 18% via drop-off analysis across 15K+ records, built a collaborative-filtering recommender that lifted click-through rate by 22%, and hit 84% accuracy forecasting trial-to-paid conversion.</p>
+                    </div>
+
+                    <div class="j-item">
+                        <div class="j-year">Jun–Aug 2022</div>
+                        <h3>Data Analyst Intern – White Elephant</h3>
+                        <p>Analyzed 100K+ records, improving data quality by 85% and model accuracy by 12% via PCA/t-SNE-based feature reduction.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
- 
+
     <!-- Contact Section -->
     <section class="contact" id="contact">
         <h2 class="section-title" style="color: var(--white); margin-bottom: 1rem;">Let's Connect</h2>
         <p class="contact-text">Open to collaborations, research opportunities, internships, and full-time roles in data science.</p>
         <div class="contact-links">
             <a href="mailto:amirthaganeshramesh@gmail.com" class="contact-link">Email</a>
-            <a href="https://github.com/Data-pageup" target="_blank" class="contact-link">GitHub</a>
-            <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" class="contact-link">LinkedIn</a>
+            <a href="https://github.com/Data-pageup" target="_blank" rel="noopener" class="contact-link">GitHub</a>
+            <a href="https://linkedin.com/in/amirthaganeshramesh" target="_blank" rel="noopener" class="contact-link">LinkedIn</a>
             <a href="tel:+916374707500" class="contact-link">+91 6374707500</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <p>© 2025 Amirthaganesh R. All rights reserved.</p>
+        <p>© 2026 Amirthaganesh R. All rights reserved.</p>
     </footer>
 
     <script>
+        /* Certificates carousel */
         let currentCertIndex = 0;
         const totalCerts = 5;
 
         function changeSlide(direction) {
             currentCertIndex += direction;
-            
             if (currentCertIndex < 0) currentCertIndex = totalCerts - 1;
             if (currentCertIndex >= totalCerts) currentCertIndex = 0;
-            
             updateCarousel();
         }
 
@@ -1556,65 +1665,64 @@
         }
 
         function updateCarousel() {
-            // Update certificate cards
-            const cards = document.querySelectorAll('.certificate-card');
-            cards.forEach((card, index) => {
-                card.classList.remove('active');
-                if (index === currentCertIndex) {
-                    card.classList.add('active');
-                }
+            document.querySelectorAll('.certificate-card').forEach((card, i) => {
+                card.classList.toggle('active', i === currentCertIndex);
             });
-
-            // Update certificate info
-            const infos = document.querySelectorAll('.certificate-info');
-            infos.forEach((info, index) => {
-                info.classList.remove('active');
-                if (index === currentCertIndex) {
-                    info.classList.add('active');
-                }
-            });
-
-            // Update indicators
-            const indicators = document.querySelectorAll('.indicator');
-            indicators.forEach((indicator, index) => {
-                indicator.classList.remove('active');
-                if (index === currentCertIndex) {
-                    indicator.classList.add('active');
-                }
+            document.querySelectorAll('.certificate-info').forEach((info, i) => {
+                info.classList.toggle('active', i === currentCertIndex);
             });
         }
 
-        // Auto-slide every 6 seconds
-        setInterval(() => {
-            changeSlide(1);
-        }, 6000);
+        setInterval(() => changeSlide(1), 6000);
 
-        // Project Filtering
-        function filterProjects(category) {
-            const cards = document.querySelectorAll('.project-card');
-            const buttons = document.querySelectorAll('.filter-btn');
-            
-            // Update active button
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Filter projects
+        /* Projects: filter + collapse */
+        const INITIAL_VISIBLE = 6;
+        let currentCategory = 'all';
+        let expanded = false;
+
+        function renderProjects() {
+            const cards = document.querySelectorAll('#projectsGrid .project-card');
+            let matched = 0;
+
             cards.forEach(card => {
-                if (category === 'all') {
-                    card.classList.remove('hidden');
-                } else {
-                    if (card.getAttribute('data-category') === category) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
+                const cats = card.dataset.category.split(' ');
+                const isMatch = currentCategory === 'all' || cats.includes(currentCategory);
+                let visible = isMatch;
+
+                if (isMatch) {
+                    matched++;
+                    if (currentCategory === 'all' && !expanded && matched > INITIAL_VISIBLE) {
+                        visible = false;
                     }
                 }
+                card.classList.toggle('hidden', !visible);
             });
+
+            const toggleBtn = document.getElementById('toggleBtn');
+            if (currentCategory === 'all') {
+                toggleBtn.style.display = '';
+                toggleBtn.textContent = expanded ? 'Show fewer projects' : 'Show all ' + cards.length + ' projects';
+            } else {
+                toggleBtn.style.display = 'none';
+            }
         }
+
+        function filterProjects(category, btn) {
+            currentCategory = category;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            renderProjects();
+        }
+
+        function toggleExpand() {
+            expanded = !expanded;
+            renderProjects();
+            if (!expanded) {
+                document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        renderProjects();
     </script>
-
-
- 
 </body>
 </html>
-
