@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amirthaganesh R - Data Scientist Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='44' font-family='Arial,Helvetica,sans-serif' font-size='34' font-weight='900' fill='%23fff' text-anchor='middle'%3EAG%3C/text%3E%3C/svg%3E">
     <style>
         * {
             margin: 0;
@@ -825,6 +826,8 @@
                         <span class="chip">Pydantic AI</span>
                         <span class="chip">MCP</span>
                         <span class="chip">RAG</span>
+                        <span class="chip">Corrective RAG</span>
+                        <span class="chip">Hybrid retrieval (BM25 + RRF)</span>
                         <span class="chip">Qdrant</span>
                         <span class="chip">ChromaDB</span>
                         <span class="chip">n8n</span>
@@ -943,7 +946,7 @@
 
             <div class="projects-grid" id="projectsGrid">
 
-                <!-- NEW 1: GoAnywhere AI -->
+                <!-- GoAnywhere AI -->
                 <div class="project-card featured" data-category="genai">
                     <div class="project-visual">
                         <img src="project_images/GoAnywhere Ai.png" alt="GoAnywhere AI travel planner" style="object-position: top center;">
@@ -969,7 +972,32 @@
                     </div>
                 </div>
 
-                <!-- NEW 3: Tamil LLM -->
+                <!-- Corrective RAG with Human-in-the-Loop -->
+                <div class="project-card featured" data-category="genai nlp">
+                    <div class="project-visual">
+                        <img src="project_images/Corrective_RAG.png" alt="Corrective RAG with Human-in-the-Loop" style="object-fit: contain; object-position: center; padding: 0.75rem;">
+                    </div>
+                    <div class="project-content">
+                        <span class="featured-tag" style="align-self: flex-start;">Corrective RAG · HITL</span>
+                        <div class="project-title">Corrective RAG with Human-in-the-Loop</div>
+                        <p class="project-description">A privacy-aware RAG system that retrieves from private documents with hybrid search (semantic vectors + BM25, merged by Reciprocal Rank Fusion), then has an LLM evaluate whether the evidence is actually sufficient. If information is missing, it asks the user for approval before running an optional Tavily web search, and returns a grounded answer with citations and an explicit list of what's missing.</p>
+                        <details class="project-insight">
+                            <summary>💡 Insight</summary>
+                            <p>Instead of guessing when retrieval falls short, the system routes on evidence quality. Private-document and public-web findings stay separated, and the web is only used with human consent.</p>
+                        </details>
+                        <div class="project-tech">
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">Hybrid Search</span>
+                            <span class="tech-badge">BM25 + RRF</span>
+                            <span class="tech-badge">Tavily</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/Data-pageup/Corrective-RAG-with-Human-in-the-Loop" class="project-link" target="_blank" rel="noopener">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tamil LLM -->
                 <div class="project-card featured" data-category="genai nlp deep-learning">
                     <div class="project-visual">
                         <img src="project_images/tamil_llm.png" alt="Tamil LLM 23M" style="object-position: top center;">
@@ -1019,7 +1047,7 @@
                     </div>
                 </div>
 
-                <!-- NEW 4: AG's GPT -->
+                <!-- AG's GPT -->
                 <div class="project-card" data-category="genai">
                     <div class="project-visual">
                         <img src="project_images/AgGPT.png" alt="AG's GPT agentic chatbot" style="object-position: top center;">
@@ -1066,7 +1094,7 @@
                     </div>
                 </div>
 
-                <!-- NEW 2: AI Automation n8n -->
+                <!-- AI Automation n8n -->
                 <div class="project-card" data-category="genai">
                     <div class="project-visual">
                         <img src="project_images/n8n.png" alt="AI Automation with n8n workflows" style="object-position: top center;">
@@ -1515,19 +1543,19 @@
 
                     <div class="j-item">
                         <div class="j-year">Jan–May 2026</div>
-                        <h3>Data Science Intern – HMH TechHub</h3>
-                        <p>Built a production LLM data pipeline and RAG system (Qdrant), automated end-to-end HR hiring with LangGraph, and engineered type-safe AI agents with Pydantic AI and Docker.</p>
+                        <h3>LLM Engineer Intern – HMH TechHub, Chennai</h3>
+                        <p>Built an ETL pipeline turning 10+ PDFs into 410K+ tokenized units and 768-dimensional embeddings for retrieval, designed an end-to-end agentic workflow in LangGraph, delivered a RAG system for analytics reporting, and engineered type-safe workflows with Pydantic AI and Docker.</p>
                     </div>
 
                     <div class="j-item">
                         <div class="j-year">Jun–Aug 2025</div>
-                        <h3>Data Science Intern – MBA Bazaar</h3>
-                        <p>Improved course completion rates by 18% via drop-off analysis across 15K+ records, built a collaborative-filtering recommender that lifted click-through rate by 22%, and hit 84% accuracy forecasting trial-to-paid conversion.</p>
+                        <h3>Machine Learning Engineer Intern – MBA Bazaar, Bangalore</h3>
+                        <p>Built XGBoost and Logistic Regression models predicting trial-to-paid conversion (84% accuracy), a collaborative-filtering recommender that lifted click-through rate by 22%, and improved course completion by 18% through drop-off analysis of 15K+ records.</p>
                     </div>
 
                     <div class="j-item">
-                        <div class="j-year">Jun–Aug 2022</div>
-                        <h3>Data Analyst Intern – White Elephant</h3>
+                        <div class="j-year">Jun–Jul 2022</div>
+                        <h3>Data Analyst Intern – White Elephant, Bangalore</h3>
                         <p>Analyzed 100K+ records, improving data quality by 85% and model accuracy by 12% via PCA/t-SNE-based feature reduction.</p>
                     </div>
                 </div>
